@@ -27,15 +27,23 @@ class ViewController: UIViewController {
     func mainActivity(){
         var accelerometerData="0"
         var error="0"
-        cmm.accelerometerUpdateInterval = 0.1
+        cmm.accelerometerUpdateInterval = 0.05
         if cmm.isAccelerometerAvailable{
             cmm.startAccelerometerUpdates(to: OperationQueue.main) {(accelerometerData:CMAccelerometerData?,error:Error?) in
                 if error != nil{
                     self.cmm.stopAccelerometerUpdates()
                 }else{
                     self.xlabel.text = "X:\(accelerometerData!.acceleration.x)"
-                    self.ylabel.text = "X:\(accelerometerData!.acceleration.y)"
-                    self.zlabel.text = "X:\(accelerometerData!.acceleration.z)"
+                    self.ylabel.text = "Y:\(accelerometerData!.acceleration.y)"
+                    self.zlabel.text = "Z:\(accelerometerData!.acceleration.z)"
+                    let animx = CABasicAnimation(keyPath: "transform.rotation")
+                    animx.toValue = (accelerometerData!.acceleration.y) * 90 * (M_PI / 180)
+                    animx.duration = 0.3
+                    animx.repeatCount = 1
+                    animx.isRemovedOnCompletion = false
+                    animx.fillMode = kCAFillModeForwards
+                    self.yokepic.layer.add(animx, forKey: nil)
+
                 }
             }}else{
             let aler = UIAlertView(title:"您的设备不支持加速度传感器 Your device doesn't support accelerometer", message:nil,delegate:nil ,cancelButtonTitle:"OK")
@@ -43,6 +51,14 @@ class ViewController: UIViewController {
               xlabel.text="error"
               ylabel.text="error"
               zlabel.text="error"
+              let animxer = CABasicAnimation(keyPath: "transform.rotation")
+              animxer.toValue = 0.9 * 90 * (M_PI / 180)
+              animxer.repeatCount = 1
+              animxer.duration = 0.01
+              animxer.isRemovedOnCompletion = false
+              animxer.fillMode = kCAFillModeForwards
+              self.yokepic.layer.add(animxer, forKey: nil)
+
             }
         
     }

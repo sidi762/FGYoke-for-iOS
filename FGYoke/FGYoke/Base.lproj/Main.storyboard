@@ -68,7 +68,7 @@
     </scenes>
     <resources>
         <image name="background.png" width="1340" height="747"/>
-        <image name="yoke.png" width="800" height="544"/>
-        <image name="yokebg.png" width="800" height="544"/>
+        <image name="yoke.png" width="800" height="401"/>
+        <image name="yokebg.png" width="800" height="401"/>
     </resources>
 </document>
