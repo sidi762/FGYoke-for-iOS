@@ -58,6 +58,14 @@ class ViewController: UIViewController {
               animxer.isRemovedOnCompletion = false
               animxer.fillMode = kCAFillModeForwards
               self.yokepic.layer.add(animxer, forKey: nil)
+              let animzer = CABasicAnimation(keyPath: "transform.position")
+              animzer.fromValue = (1,1)
+              animzer.toValue = (100,100)
+              animzer.repeatCount = 1
+              animzer.duration = 10
+              animzer.isRemovedOnCompletion = false
+              animzer.fillMode = kCAFillModeForwards
+              self.yokepic.layer.add(animzer, forKey:nil)
 
             }
         
