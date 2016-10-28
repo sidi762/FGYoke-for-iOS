@@ -3,7 +3,7 @@
 //  FGYoke
 //
 //  Created by 梁思地 on 10/20/16.
-//  Copyright © 2016 梁思地. All rights reserved.
+//  Copyright © 2016 梁思地 FGPRC. All rights reserved.
 //
 
 import UIKit
@@ -43,10 +43,11 @@ class ViewController: UIViewController {
                     animx.isRemovedOnCompletion = false
                     animx.fillMode = kCAFillModeForwards
                     self.yokepic.layer.add(animx, forKey: nil)
-
+                    let z = (accelerometerData!.acceleration.z) * 100
+                    self.yokepic.transform = CGAffineTransform(translationX: 0, y:CGFloat(z) )
                 }
             }}else{
-            let aler = UIAlertView(title:"您的设备不支持加速度传感器 Your device doesn't support accelerometer", message:nil,delegate:nil ,cancelButtonTitle:"OK")
+            let aler = UIAlertView(title:"您的设备不支持加速度传感器 Your device doesn't support accelerometer",message:nil,delegate:nil ,cancelButtonTitle:"OK")
             aler.show()
               xlabel.text="error"
               ylabel.text="error"
@@ -58,15 +59,7 @@ class ViewController: UIViewController {
               animxer.isRemovedOnCompletion = false
               animxer.fillMode = kCAFillModeForwards
               self.yokepic.layer.add(animxer, forKey: nil)
-              let animzer = CABasicAnimation(keyPath: "transform.position")
-              animzer.fromValue = (1,1)
-              animzer.toValue = (100,100)
-              animzer.repeatCount = 1
-              animzer.duration = 10
-              animzer.isRemovedOnCompletion = false
-              animzer.fillMode = kCAFillModeForwards
-              self.yokepic.layer.add(animzer, forKey:nil)
-
+              self.yokepic.transform = CGAffineTransform(translationX: 0, y: -100)
             }
         
     }
