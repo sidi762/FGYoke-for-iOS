@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA49B83F1DC3BB1800A2D673 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = DA49B83E1DC3BB1800A2D673 /* settings.png */; };
 		DA6751091DB9C0160087D9ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6751081DB9C0160087D9ED /* AppDelegate.swift */; };
 		DA67510B1DB9C0160087D9ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA67510A1DB9C0160087D9ED /* ViewController.swift */; };
 		DA67510E1DB9C0160087D9ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA67510C1DB9C0160087D9ED /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DA49B83E1DC3BB1800A2D673 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settings.png; path = "../../../../模拟飞行/FlightGear/FG Yoke Proj/settings.png"; sourceTree = "<group>"; };
 		DA6751051DB9C0160087D9ED /* FGYoke.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FGYoke.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA6751081DB9C0160087D9ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA67510A1DB9C0160087D9ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				DA67510C1DB9C0160087D9ED /* Main.storyboard */,
 				DA6751121DB9C0160087D9ED /* Assets.xcassets */,
 				DA67513F1DB9C0F60087D9ED /* background.png */,
+				DA49B83E1DC3BB1800A2D673 /* settings.png */,
 				DA6751401DB9C0F60087D9ED /* logo120x120.png */,
 				DA6751411DB9C0F60087D9ED /* logo180x180.png */,
 				DA6751491DB9C3810087D9ED /* skyalliance logo.png */,
@@ -288,6 +291,7 @@
 				DA6751461DB9C0F60087D9ED /* logo180x180.png in Resources */,
 				DA67510E1DB9C0160087D9ED /* Main.storyboard in Resources */,
 				DA6751451DB9C0F60087D9ED /* logo120x120.png in Resources */,
+				DA49B83F1DC3BB1800A2D673 /* settings.png in Resources */,
 				DA67514A1DB9C3810087D9ED /* skyalliance logo.png in Resources */,
 				DA6751481DB9C0F60087D9ED /* yokebg.png in Resources */,
 				DA6751471DB9C0F60087D9ED /* yoke.png in Resources */,

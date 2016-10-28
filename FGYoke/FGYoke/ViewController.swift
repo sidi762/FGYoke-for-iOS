@@ -43,7 +43,7 @@ class ViewController: UIViewController {
                     animx.isRemovedOnCompletion = false
                     animx.fillMode = kCAFillModeForwards
                     self.yokepic.layer.add(animx, forKey: nil)
-                    let z = (accelerometerData!.acceleration.z) * 100
+                    let z = (accelerometerData!.acceleration.z) * -90
                     self.yokepic.transform = CGAffineTransform(translationX: 0, y:CGFloat(z) )
                 }
             }}else{
@@ -59,7 +59,7 @@ class ViewController: UIViewController {
               animxer.isRemovedOnCompletion = false
               animxer.fillMode = kCAFillModeForwards
               self.yokepic.layer.add(animxer, forKey: nil)
-              self.yokepic.transform = CGAffineTransform(translationX: 0, y: -100)
+              self.yokepic.transform = CGAffineTransform(translationX: 0, y: 90)
             }
         
     }
