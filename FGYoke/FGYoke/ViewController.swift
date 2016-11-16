@@ -43,8 +43,20 @@ class ViewController: UIViewController {
                     animx.isRemovedOnCompletion = false
                     animx.fillMode = kCAFillModeForwards
                     self.yokepic.layer.add(animx, forKey: nil)
-                    let z = (accelerometerData!.acceleration.z) * -90
-                    self.yokepic.transform = CGAffineTransform(translationX: 0, y:CGFloat(z) )
+//                    let z = lroundf(Float(accelerometerData!.acceleration.z)*10) * 9
+//                    let z = width: 100, height: 100(accelerometerData!.acceleration.z * 10) * 9
+
+//                    self.yokepic.transform = CGAffineTransform(translationX: 0, y:CGFloat(z) )
+                    let animationz = CABasicAnimation(keyPath: "bounds.size")
+                    animationz.fromValue = NSValue(cgSize: self.yokepic.frame.size)
+                    let datasizeheight = self.yokepic.frame.size.height+CGFloat(accelerometerData!.acceleration.z*100)
+                    let datasizewidth = self.yokepic.frame.size.width+CGFloat(accelerometerData!.acceleration.z*100)
+                    let size = CGSize(width: CGFloat(datasizewidth), height: CGFloat(datasizeheight))
+                    animationz.toValue = NSValue(cgSize:(size))
+                    animationz.duration = 0.01
+                    animationz.isRemovedOnCompletion = false
+                    animationz.fillMode = kCAFillModeForwards
+                    self.yokepic.layer.add(animationz, forKey: nil)
                 }
             }}else{
             let aler = UIAlertView(title:"您的设备不支持加速度传感器 Your device doesn't support accelerometer",message:nil,delegate:nil ,cancelButtonTitle:"OK")
@@ -55,11 +67,19 @@ class ViewController: UIViewController {
               let animxer = CABasicAnimation(keyPath: "transform.rotation")
               animxer.toValue = 0.9 * 90 * (M_PI / 180)
               animxer.repeatCount = 1
-              animxer.duration = 0.01
+              animxer.duration = 0.001
               animxer.isRemovedOnCompletion = false
               animxer.fillMode = kCAFillModeForwards
               self.yokepic.layer.add(animxer, forKey: nil)
-              self.yokepic.transform = CGAffineTransform(translationX: 0, y: 90)
+              let animationzer = CABasicAnimation(keyPath: "bounds.size")
+              animationzer.fromValue = NSValue(cgSize: self.yokepic.frame.size)
+              let size = CGSize(width: 100, height: 100)
+              animationzer.toValue = NSValue(cgSize:(size))
+              animationzer.duration = 0.01
+              animationzer.isRemovedOnCompletion = false
+              animationzer.fillMode = kCAFillModeForwards
+            self.yokepic.layer.add(animationzer, forKey: nil)
+
             }
         
     }

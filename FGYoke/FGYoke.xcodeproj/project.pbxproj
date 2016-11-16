@@ -24,6 +24,8 @@
 		DA6751471DB9C0F60087D9ED /* yoke.png in Resources */ = {isa = PBXBuildFile; fileRef = DA6751421DB9C0F60087D9ED /* yoke.png */; };
 		DA6751481DB9C0F60087D9ED /* yokebg.png in Resources */ = {isa = PBXBuildFile; fileRef = DA6751431DB9C0F60087D9ED /* yokebg.png */; };
 		DA67514A1DB9C3810087D9ED /* skyalliance logo.png in Resources */ = {isa = PBXBuildFile; fileRef = DA6751491DB9C3810087D9ED /* skyalliance logo.png */; };
+		DA6864B91DC5427400F24FA0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6864B81DC5427400F24FA0 /* SettingsViewController.swift */; };
+		DA9723511DDB9745002F92B9 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9723501DDB9745002F92B9 /* AboutViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,8 @@
 		DA6751421DB9C0F60087D9ED /* yoke.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = yoke.png; path = "../../../../模拟飞行/FlightGear/FG Yoke Proj/yoke.png"; sourceTree = "<group>"; };
 		DA6751431DB9C0F60087D9ED /* yokebg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = yokebg.png; path = "../../../../模拟飞行/FlightGear/FG Yoke Proj/yokebg.png"; sourceTree = "<group>"; };
 		DA6751491DB9C3810087D9ED /* skyalliance logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "skyalliance logo.png"; path = "../../../../模拟飞行/涂装/IFSLAnewlogo/skyalliance logo.png"; sourceTree = "<group>"; };
+		DA6864B81DC5427400F24FA0 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		DA9723501DDB9745002F92B9 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +129,8 @@
 				DA6751081DB9C0160087D9ED /* AppDelegate.swift */,
 				DA67510A1DB9C0160087D9ED /* ViewController.swift */,
 				DA67510C1DB9C0160087D9ED /* Main.storyboard */,
+				DA9723501DDB9745002F92B9 /* AboutViewController.swift */,
+				DA6864B81DC5427400F24FA0 /* SettingsViewController.swift */,
 				DA6751121DB9C0160087D9ED /* Assets.xcassets */,
 				DA67513F1DB9C0F60087D9ED /* background.png */,
 				DA49B83E1DC3BB1800A2D673 /* settings.png */,
@@ -322,6 +328,8 @@
 				DA6751111DB9C0160087D9ED /* FGYoke.xcdatamodeld in Sources */,
 				DA67510B1DB9C0160087D9ED /* ViewController.swift in Sources */,
 				DA6751091DB9C0160087D9ED /* AppDelegate.swift in Sources */,
+				DA9723511DDB9745002F92B9 /* AboutViewController.swift in Sources */,
+				DA6864B91DC5427400F24FA0 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
