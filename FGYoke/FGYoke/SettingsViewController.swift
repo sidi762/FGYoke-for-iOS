@@ -9,6 +9,7 @@
 import UIKit
 var acipaddre:String = ""
 var acport:Int?
+var strport:String?
 
 
 class SettingsViewController: UIViewController {
@@ -26,7 +27,7 @@ class SettingsViewController: UIViewController {
     
     @IBAction func saveSettings(_ sender: UIButton) {
         iplabel.text = "IP:" + acipaddre
-        portlabel.text = "Port端口:" + (String)(describing: acport)
+        portlabel.text = "Port端口:" + strport!
         acipaddre = self.ipinput.text!
         acport = Int(self.portinput.text!)
 
@@ -37,6 +38,7 @@ class SettingsViewController: UIViewController {
     
     @IBAction func portinputed(_ sender: UITextField) {
         acport = Int(self.portinput.text!)
+        strport = self.portinput.text
 
     }
     
@@ -45,8 +47,13 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if(acipaddre != ""){
         iplabel.text = "IP:" + acipaddre
-        portlabel.text = "Port端口:" + (acport?.description)!
+        
+        }
+        if(acport != nil){
+            portlabel.text = "Port端口:" + strport!
+        }
                       // Do any additional setup after loading the view.
     }
     @IBAction func close(){
