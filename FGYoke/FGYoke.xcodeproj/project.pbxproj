@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		DA49B83F1DC3BB1800A2D673 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = DA49B83E1DC3BB1800A2D673 /* settings.png */; };
+		DA57DEBC1DDE257D0075E8BD /* ysocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA57DEB71DDE257D0075E8BD /* ysocket.swift */; };
+		DA57DEBD1DDE257D0075E8BD /* ytcpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = DA57DEB81DDE257D0075E8BD /* ytcpsocket.c */; };
+		DA57DEBE1DDE257D0075E8BD /* ytcpsocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA57DEB91DDE257D0075E8BD /* ytcpsocket.swift */; };
+		DA57DEBF1DDE257D0075E8BD /* yudpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = DA57DEBA1DDE257D0075E8BD /* yudpsocket.c */; };
+		DA57DEC01DDE257D0075E8BD /* yudpsocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA57DEBB1DDE257D0075E8BD /* yudpsocket.swift */; };
 		DA6751091DB9C0160087D9ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6751081DB9C0160087D9ED /* AppDelegate.swift */; };
 		DA67510B1DB9C0160087D9ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA67510A1DB9C0160087D9ED /* ViewController.swift */; };
 		DA67510E1DB9C0160087D9ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA67510C1DB9C0160087D9ED /* Main.storyboard */; };
@@ -47,6 +52,11 @@
 
 /* Begin PBXFileReference section */
 		DA49B83E1DC3BB1800A2D673 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settings.png; path = "../../../../模拟飞行/FlightGear/FG Yoke Proj/settings.png"; sourceTree = "<group>"; };
+		DA57DEB71DDE257D0075E8BD /* ysocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ysocket.swift; sourceTree = "<group>"; };
+		DA57DEB81DDE257D0075E8BD /* ytcpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ytcpsocket.c; sourceTree = "<group>"; };
+		DA57DEB91DDE257D0075E8BD /* ytcpsocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ytcpsocket.swift; sourceTree = "<group>"; };
+		DA57DEBA1DDE257D0075E8BD /* yudpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yudpsocket.c; sourceTree = "<group>"; };
+		DA57DEBB1DDE257D0075E8BD /* yudpsocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = yudpsocket.swift; sourceTree = "<group>"; };
 		DA6751051DB9C0160087D9ED /* FGYoke.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FGYoke.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA6751081DB9C0160087D9ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA67510A1DB9C0160087D9ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +111,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DA57DEB61DDE257D0075E8BD /* ysocket */ = {
+			isa = PBXGroup;
+			children = (
+				DA57DEB71DDE257D0075E8BD /* ysocket.swift */,
+				DA57DEB81DDE257D0075E8BD /* ytcpsocket.c */,
+				DA57DEB91DDE257D0075E8BD /* ytcpsocket.swift */,
+				DA57DEBA1DDE257D0075E8BD /* yudpsocket.c */,
+				DA57DEBB1DDE257D0075E8BD /* yudpsocket.swift */,
+			);
+			path = ysocket;
+			sourceTree = "<group>";
+		};
 		DA6750FC1DB9C0150087D9ED = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +147,7 @@
 		DA6751071DB9C0160087D9ED /* FGYoke */ = {
 			isa = PBXGroup;
 			children = (
+				DA57DEB61DDE257D0075E8BD /* ysocket */,
 				DA67513E1DB9C0870087D9ED /* FGYoke.entitlements */,
 				DA6751081DB9C0160087D9ED /* AppDelegate.swift */,
 				DA67510A1DB9C0160087D9ED /* ViewController.swift */,
@@ -325,11 +348,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA57DEBC1DDE257D0075E8BD /* ysocket.swift in Sources */,
 				DA6751111DB9C0160087D9ED /* FGYoke.xcdatamodeld in Sources */,
 				DA67510B1DB9C0160087D9ED /* ViewController.swift in Sources */,
 				DA6751091DB9C0160087D9ED /* AppDelegate.swift in Sources */,
+				DA57DEBE1DDE257D0075E8BD /* ytcpsocket.swift in Sources */,
+				DA57DEBF1DDE257D0075E8BD /* yudpsocket.c in Sources */,
+				DA57DEC01DDE257D0075E8BD /* yudpsocket.swift in Sources */,
 				DA9723511DDB9745002F92B9 /* AboutViewController.swift in Sources */,
 				DA6864B91DC5427400F24FA0 /* SettingsViewController.swift in Sources */,
+				DA57DEBD1DDE257D0075E8BD /* ytcpsocket.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
