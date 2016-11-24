@@ -15,19 +15,26 @@ import CoreData
 import CoreMotion
 var isConnected:Bool = false
 var isWorking:Bool = false
+var xdata:Double = 0.0
+var ydata:Double = 0.0
+var calibrateDataX:Double = 0.0
+var calibrateDataY:Double = 0.0
+
 
 class ViewController: UIViewController {
 
     @IBOutlet weak var `switch`: UISwitch!
     @IBOutlet weak var yokepic: UIImageView!
     @IBOutlet weak var xlabel: UILabel!
-    @IBOutlet weak var testbut: UIButton!
     @IBOutlet weak var ylabel: UILabel!
     @IBOutlet weak var zlabel: UILabel!
+    @IBOutlet weak var calibrateButton: UIButton!
+
+//  @IBOutlet weak var testbut: UIButton!
    
     var cmm = CMMotionManager()
     var client:TCPClient = TCPClient()
-
+   
 //    @IBAction func testconnect(_ sender: UIButton) {
 //        connect(addre: "localhost", portt: 12345)
 //    }
@@ -38,7 +45,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         cmm = CMMotionManager()
         yokepic.isHidden = true
+        calibrateButton.isHidden=true
         }
+    
     
     func startWorking(){
         client = TCPClient(addr: acipaddre, port: acport!)
@@ -69,9 +78,12 @@ class ViewController: UIViewController {
             if(acipaddre != ""){
                 if(acport != nil){
                     startWorking()
-
+                }else{
+                    stopWorking()
                     }
-                }
+            }else{
+                stopWorking()
+            }
                     }else{
              stopWorking()
             yokepic.isHidden = true
@@ -79,8 +91,15 @@ class ViewController: UIViewController {
         }
            }
     
+    @IBAction func calibrateStart(_ sender: UIButton) {
+        if(isWorking){
+        calibrateDataX = xdata
+        calibrateDataY = ydata
+        }
+    }
     
     func mainActivity(){
+        calibrateButton.isHidden = false
         var accelerometerData="0"
         var error="0"
         cmm.accelerometerUpdateInterval = 0.05
@@ -89,14 +108,16 @@ class ViewController: UIViewController {
                 if error != nil{
                     self.cmm.stopAccelerometerUpdates()
                 }else{
-                    
                     //正常情况
+                    isWorking = true
                     self.xlabel.text = "X:\(accelerometerData!.acceleration.x)"
                     self.ylabel.text = "Y:\(accelerometerData!.acceleration.y)"
                     self.zlabel.text = "Z:\(accelerometerData!.acceleration.z)"
+                    xdata = accelerometerData!.acceleration.y
+                    ydata = accelerometerData!.acceleration.z
                     //动画
                     let animx = CABasicAnimation(keyPath: "transform.rotation")
-                    animx.toValue = (accelerometerData!.acceleration.y) * 90 * (M_PI / 180)
+                    animx.toValue = (accelerometerData!.acceleration.y) * 90 * (M_PI / 180) - calibrateDataX * 90 * (M_PI / 180)
                     animx.duration = 0.3
                     animx.repeatCount = 1
                     animx.isRemovedOnCompletion = false
@@ -104,8 +125,8 @@ class ViewController: UIViewController {
                     self.yokepic.layer.add(animx, forKey: nil)
                     let animationz = CABasicAnimation(keyPath: "bounds.size")
                     animationz.fromValue = NSValue(cgSize: self.yokepic.frame.size)
-                    let datasizeheight = self.yokepic.frame.size.height+CGFloat(accelerometerData!.acceleration.z*100)
-                    let datasizewidth = self.yokepic.frame.size.width+CGFloat(accelerometerData!.acceleration.z*100)
+                    let datasizeheight = self.yokepic.frame.size.height+CGFloat(accelerometerData!.acceleration.z*100)-CGFloat(calibrateDataY*100)
+                    let datasizewidth = self.yokepic.frame.size.width+CGFloat(accelerometerData!.acceleration.z*100)-CGFloat(calibrateDataY*100)
                     let size = CGSize(width: CGFloat(datasizewidth), height: CGFloat(datasizeheight))
                     animationz.toValue = NSValue(cgSize:(size))
                     animationz.duration = 0.01
@@ -113,7 +134,7 @@ class ViewController: UIViewController {
                     animationz.fillMode = kCAFillModeForwards
                     self.yokepic.layer.add(animationz, forKey: nil)
                     //发送至FG
-                    let (success, errmsg) = self.client.send(str:"\((Float)(accelerometerData!.acceleration.y)),\((Float)(-accelerometerData!.acceleration.z))\n")
+                    let (success, errmsg) = self.client.send(str:"\((Float)(accelerometerData!.acceleration.y)-(Float)(calibrateDataX)),\((Float)(-accelerometerData!.acceleration.z)+(Float)(calibrateDataY))\n")
                     if success {
                         print("success")
                     } else {

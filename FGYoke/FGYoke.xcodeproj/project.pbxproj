@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA06BCA91DE7575D00B04F48 /* 校准按钮.png in Resources */ = {isa = PBXBuildFile; fileRef = DA06BCA71DE7575C00B04F48 /* 校准按钮.png */; };
+		DA06BCAB1DE758D800B04F48 /* calibrate.png in Resources */ = {isa = PBXBuildFile; fileRef = DA06BCAA1DE758D800B04F48 /* calibrate.png */; };
 		DA49B83F1DC3BB1800A2D673 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = DA49B83E1DC3BB1800A2D673 /* settings.png */; };
 		DA57DEBC1DDE257D0075E8BD /* ysocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA57DEB71DDE257D0075E8BD /* ysocket.swift */; };
 		DA57DEBD1DDE257D0075E8BD /* ytcpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = DA57DEB81DDE257D0075E8BD /* ytcpsocket.c */; };
@@ -51,6 +53,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DA06BCA71DE7575C00B04F48 /* 校准按钮.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "校准按钮.png"; sourceTree = "<group>"; };
+		DA06BCAA1DE758D800B04F48 /* calibrate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calibrate.png; sourceTree = "<group>"; };
 		DA49B83E1DC3BB1800A2D673 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settings.png; path = "../../../../模拟飞行/FlightGear/FG Yoke Proj/settings.png"; sourceTree = "<group>"; };
 		DA57DEB71DDE257D0075E8BD /* ysocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ysocket.swift; sourceTree = "<group>"; };
 		DA57DEB81DDE257D0075E8BD /* ytcpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ytcpsocket.c; sourceTree = "<group>"; };
@@ -152,11 +156,13 @@
 				DA6751081DB9C0160087D9ED /* AppDelegate.swift */,
 				DA67510A1DB9C0160087D9ED /* ViewController.swift */,
 				DA67510C1DB9C0160087D9ED /* Main.storyboard */,
+				DA06BCA71DE7575C00B04F48 /* 校准按钮.png */,
 				DA9723501DDB9745002F92B9 /* AboutViewController.swift */,
 				DA6864B81DC5427400F24FA0 /* SettingsViewController.swift */,
 				DA6751121DB9C0160087D9ED /* Assets.xcassets */,
 				DA67513F1DB9C0F60087D9ED /* background.png */,
 				DA49B83E1DC3BB1800A2D673 /* settings.png */,
+				DA06BCAA1DE758D800B04F48 /* calibrate.png */,
 				DA6751401DB9C0F60087D9ED /* logo120x120.png */,
 				DA6751411DB9C0F60087D9ED /* logo180x180.png */,
 				DA6751491DB9C3810087D9ED /* skyalliance logo.png */,
@@ -315,6 +321,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA6751161DB9C0160087D9ED /* LaunchScreen.storyboard in Resources */,
+				DA06BCA91DE7575D00B04F48 /* 校准按钮.png in Resources */,
 				DA6751441DB9C0F60087D9ED /* background.png in Resources */,
 				DA6751131DB9C0160087D9ED /* Assets.xcassets in Resources */,
 				DA6751461DB9C0F60087D9ED /* logo180x180.png in Resources */,
@@ -324,6 +331,7 @@
 				DA67514A1DB9C3810087D9ED /* skyalliance logo.png in Resources */,
 				DA6751481DB9C0F60087D9ED /* yokebg.png in Resources */,
 				DA6751471DB9C0F60087D9ED /* yoke.png in Resources */,
+				DA06BCAB1DE758D800B04F48 /* calibrate.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

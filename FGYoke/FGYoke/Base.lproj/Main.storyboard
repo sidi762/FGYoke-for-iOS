@@ -73,10 +73,20 @@
                                     <action selector="switchMoved:" destination="BYZ-38-t0r" eventType="valueChanged" id="PRK-dF-zXE"/>
                                 </connections>
                             </switch>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ir-KN-gnh">
+                                <rect key="frame" x="0.0" y="314" width="113" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <state key="normal" title="Calibrate" image="calibrate.png"/>
+                                <connections>
+                                    <action selector="calibrateStart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T2U-4e-wXq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
+                        <outlet property="calibrateButton" destination="2Ir-KN-gnh" id="My2-Bd-YCi"/>
                         <outlet property="switch" destination="7H7-uE-yGI" id="jg4-Yn-u6I"/>
                         <outlet property="xlabel" destination="Oh3-fq-PRg" id="r9E-y4-oUl"/>
                         <outlet property="ylabel" destination="hdG-gi-APe" id="Ebg-mG-fFP"/>
@@ -217,6 +227,7 @@
     </scenes>
     <resources>
         <image name="background.png" width="1340" height="747"/>
+        <image name="calibrate.png" width="324" height="157"/>
         <image name="settings.png" width="209" height="146"/>
         <image name="yoke.png" width="800" height="401"/>
         <image name="yokebg.png" width="800" height="401"/>
