@@ -6,6 +6,10 @@
 //  Copyright © 2016 梁思地 FGPRC. All rights reserved.
 //
 
+//bug记录：未完成点击保存时ip与port输入框是否为空判定?
+//        未完成连接时ip与port是否有值的判定?
+//todo: 校准
+
 import UIKit
 import CoreData
 import CoreMotion
@@ -62,9 +66,16 @@ class ViewController: UIViewController {
     
     @IBAction func switchMoved(_ sender: UISwitch) {
         if(isWorking==false){
-             startWorking()
-        }else{
+            if(acipaddre != ""){
+                if(acport != nil){
+                    startWorking()
+
+                    }
+                }
+                    }else{
              stopWorking()
+            yokepic.isHidden = true
+
         }
            }
     

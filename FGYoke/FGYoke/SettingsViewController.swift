@@ -26,10 +26,14 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var savebutton: UIButton!
     
     @IBAction func saveSettings(_ sender: UIButton) {
+         if(acipaddre != ""){
+            if(acport != nil){
         iplabel.text = "IP:" + acipaddre
         portlabel.text = "Port端口:" + strport!
         acipaddre = self.ipinput.text!
         acport = Int(self.portinput.text!)
+            }
+        }
 
     }
             @IBAction func ipinputed(_ sender: UITextField) {
