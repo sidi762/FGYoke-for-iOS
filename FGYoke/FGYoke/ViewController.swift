@@ -6,10 +6,15 @@
 //  Copyright © 2016 梁思地 FGPRC. All rights reserved.
 //
 
-//bug记录：未完成点击保存时ip与port输入框是否为空判定?
-//        未完成连接时ip与port是否有值的判定?
-//todo: 校准
-
+//bug记录：未完成点击保存时ip与port输入框是否为空判定√
+//        未完成连接时ip与port是否有值的判定?√
+//        开关有时不自动弹回?
+//        !!!!无法连接！！！！
+//todo: 校准√
+//      增加开关图片√
+//      Siri支持
+//      增加更多用户提示
+//      增加尾舵支持
 import UIKit
 import CoreData
 import CoreMotion
@@ -19,17 +24,17 @@ var xdata:Double = 0.0
 var ydata:Double = 0.0
 var calibrateDataX:Double = 0.0
 var calibrateDataY:Double = 0.0
-
-
+var isAcWorking = false
+var debugInfoText = "nothing"
 class ViewController: UIViewController {
 
-    @IBOutlet weak var `switch`: UISwitch!
+    @IBOutlet weak var debugInfo: UILabel!
     @IBOutlet weak var yokepic: UIImageView!
     @IBOutlet weak var xlabel: UILabel!
     @IBOutlet weak var ylabel: UILabel!
     @IBOutlet weak var zlabel: UILabel!
     @IBOutlet weak var calibrateButton: UIButton!
-
+    @IBOutlet weak var swichButton: UIButton!
 //  @IBOutlet weak var testbut: UIButton!
    
     var cmm = CMMotionManager()
@@ -39,26 +44,52 @@ class ViewController: UIViewController {
 //        connect(addre: "localhost", portt: 12345)
 //    }
     
+    func swichIsOff(){
+        swichButton.setImage(#imageLiteral(resourceName: "swichoff.png"), for: UIControlState.normal)
+    }
+    
+    func swichIsOn(){
+        swichButton.setImage(#imageLiteral(resourceName: "swichon.png"), for: UIControlState.normal)
+    }
+    
+    func swichIsTriped(){
+        swichIsOff()
+        swichIsOn()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1 , execute: {
+        self.swichIsOff()
 
+        })
+        
+
+        
+        
+    }
+    
     override func viewDidLoad() {
         isConnected = false
         super.viewDidLoad()
         cmm = CMMotionManager()
         yokepic.isHidden = true
         calibrateButton.isHidden=true
+        debugInfo.isHidden = true
         }
     
     
     func startWorking(){
         client = TCPClient(addr: acipaddre, port: acport!)
-        var (success, errmsg) = client.connect(timeout: 1)
+        var (success, errmsg) = client.connect(timeout: 2)
         if success {
             print("success")
+            debugInfoText = "success to connect"
             isConnected = true
             self.yokepic.isHidden = false
+            swichIsOn()
             mainActivity()
+            isWorking = true
+            self.debugInfo.text = debugInfoText
         } else {
             print(errmsg)
+            debugInfoText = errmsg
             stopWorking()
             
             
@@ -68,12 +99,21 @@ class ViewController: UIViewController {
     
     func stopWorking(){
         yokepic.isHidden = true
-        `switch`.isOn = false
+        calibrateButton.isHidden = true
+        swichIsTriped()
         client.close()
         isConnected = false
+        isWorking = false
+        self.debugInfo.text = debugInfoText
     }
     
-    @IBAction func switchMoved(_ sender: UISwitch) {
+    @IBAction func switchMoved(_ sender: UIButton) {
+        if(devModeState == true){
+            self.debugInfo.isHidden = false
+        }else{
+            self.debugInfo.isHidden = true
+        }
+
         if(isWorking==false){
             if(acipaddre != ""){
                 if(acport != nil){
@@ -89,6 +129,7 @@ class ViewController: UIViewController {
             yokepic.isHidden = true
 
         }
+        self.debugInfo.text = debugInfoText
            }
     
     @IBAction func calibrateStart(_ sender: UIButton) {
@@ -100,21 +141,27 @@ class ViewController: UIViewController {
     
     func mainActivity(){
         calibrateButton.isHidden = false
-        var accelerometerData="0"
-        var error="0"
+//        var accelerometerData="0"
+//        var error="0"
         cmm.accelerometerUpdateInterval = 0.05
         if cmm.isAccelerometerAvailable{
             cmm.startAccelerometerUpdates(to: OperationQueue.main) {(accelerometerData:CMAccelerometerData?,error:Error?) in
                 if error != nil{
                     self.cmm.stopAccelerometerUpdates()
-                }else{
+                    }else{
                     //正常情况
-                    isWorking = true
+                    isAcWorking = true
                     self.xlabel.text = "X:\(accelerometerData!.acceleration.x)"
                     self.ylabel.text = "Y:\(accelerometerData!.acceleration.y)"
                     self.zlabel.text = "Z:\(accelerometerData!.acceleration.z)"
                     xdata = accelerometerData!.acceleration.y
                     ydata = accelerometerData!.acceleration.z
+                    if(devModeState == true){
+                        self.debugInfo.isHidden = false
+                    }else{
+                        self.debugInfo.isHidden = true
+                    }
+                    self.debugInfo.text = debugInfoText
                     //动画
                     let animx = CABasicAnimation(keyPath: "transform.rotation")
                     animx.toValue = (accelerometerData!.acceleration.y) * 90 * (M_PI / 180) - calibrateDataX * 90 * (M_PI / 180)
@@ -137,14 +184,13 @@ class ViewController: UIViewController {
                     let (success, errmsg) = self.client.send(str:"\((Float)(accelerometerData!.acceleration.y)-(Float)(calibrateDataX)),\((Float)(-accelerometerData!.acceleration.z)+(Float)(calibrateDataY))\n")
                     if success {
                         print("success")
+                        debugInfoText = "success to connect"
+                        
                     } else {
                         print(errmsg)
+                        debugInfoText = errmsg
                     }
 
-                                        //test
-//                    let client:TCPClient = TCPClient(addr: "10.0.8.201", port: 12345)
-//                    var (success, errmsg) = client.connect(timeout: 1)
-//                    client.send(str:"\(accelerometerData!.acceleration.y),\(accelerometerData!.acceleration.z)")
                 }
             }
                         }else{
@@ -180,5 +226,6 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+       
 }

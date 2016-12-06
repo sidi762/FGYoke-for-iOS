@@ -10,6 +10,7 @@ import UIKit
 var acipaddre:String = ""
 var acport:Int?
 var strport:String?
+var devModeState = false
 
 
 class SettingsViewController: UIViewController {
@@ -25,6 +26,15 @@ class SettingsViewController: UIViewController {
     
     @IBOutlet weak var savebutton: UIButton!
     
+    @IBOutlet weak var devModeSwich: UISwitch!
+    
+    @IBAction func DevMode(_ sender: Any) {
+        if(devModeState == false){
+            devModeState = true
+        }else{
+            devModeState = false
+        }
+    }
     @IBAction func saveSettings(_ sender: UIButton) {
          if(acipaddre != ""){
             if(acport != nil){
