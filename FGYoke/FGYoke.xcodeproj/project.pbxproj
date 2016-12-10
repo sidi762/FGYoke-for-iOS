@@ -25,6 +25,8 @@
 		DA6751481DB9C0F60087D9ED /* yokebg.png in Resources */ = {isa = PBXBuildFile; fileRef = DA6751431DB9C0F60087D9ED /* yokebg.png */; };
 		DA67514A1DB9C3810087D9ED /* skyalliance logo.png in Resources */ = {isa = PBXBuildFile; fileRef = DA6751491DB9C3810087D9ED /* skyalliance logo.png */; };
 		DA6864B91DC5427400F24FA0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6864B81DC5427400F24FA0 /* SettingsViewController.swift */; };
+		DA6F04D11DFCAE4A003E5BB6 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6F04CE1DFCAE4A003E5BB6 /* GCDAsyncSocket.m */; };
+		DA6F04D21DFCAE4A003E5BB6 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6F04D01DFCAE4A003E5BB6 /* GCDAsyncUdpSocket.m */; };
 		DA82B7E81DF292D900DC210F /* ysocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA82B7E31DF292D900DC210F /* ysocket.swift */; };
 		DA82B7E91DF292D900DC210F /* ytcpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = DA82B7E41DF292D900DC210F /* ytcpsocket.c */; };
 		DA82B7EA1DF292D900DC210F /* ytcpsocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA82B7E51DF292D900DC210F /* ytcpsocket.swift */; };
@@ -92,6 +94,11 @@
 		DA6751431DB9C0F60087D9ED /* yokebg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = yokebg.png; path = "../../../../模拟飞行/FlightGear/FG Yoke Proj/yokebg.png"; sourceTree = "<group>"; };
 		DA6751491DB9C3810087D9ED /* skyalliance logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "skyalliance logo.png"; path = "../../../../模拟飞行/涂装/IFSLAnewlogo/skyalliance logo.png"; sourceTree = "<group>"; };
 		DA6864B81DC5427400F24FA0 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		DA6F04CC1DFCAE0B003E5BB6 /* CocoaAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CocoaAsyncSocket.h; path = ../../../../../../Documents/CocoaAsyncSocket/Source/CocoaAsyncSocket.h; sourceTree = "<group>"; };
+		DA6F04CD1DFCAE4A003E5BB6 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCDAsyncSocket.h; path = ../../../../../../Documents/CocoaAsyncSocket/Source/GCD/GCDAsyncSocket.h; sourceTree = "<group>"; };
+		DA6F04CE1DFCAE4A003E5BB6 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCDAsyncSocket.m; path = ../../../../../../Documents/CocoaAsyncSocket/Source/GCD/GCDAsyncSocket.m; sourceTree = "<group>"; };
+		DA6F04CF1DFCAE4A003E5BB6 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCDAsyncUdpSocket.h; path = ../../../../../../Documents/CocoaAsyncSocket/Source/GCD/GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
+		DA6F04D01DFCAE4A003E5BB6 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCDAsyncUdpSocket.m; path = ../../../../../../Documents/CocoaAsyncSocket/Source/GCD/GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
 		DA82B7E21DF292D800DC210F /* FGYoke-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FGYoke-Bridging-Header.h"; sourceTree = "<group>"; };
 		DA82B7E31DF292D900DC210F /* ysocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ysocket.swift; path = ysocket/ysocket.swift; sourceTree = "<group>"; };
 		DA82B7E41DF292D900DC210F /* ytcpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ytcpsocket.c; path = ysocket/ytcpsocket.c; sourceTree = "<group>"; };
@@ -160,6 +167,11 @@
 				DA67513E1DB9C0870087D9ED /* FGYoke.entitlements */,
 				DA6751081DB9C0160087D9ED /* AppDelegate.swift */,
 				DA67510A1DB9C0160087D9ED /* ViewController.swift */,
+				DA6F04CD1DFCAE4A003E5BB6 /* GCDAsyncSocket.h */,
+				DA6F04CE1DFCAE4A003E5BB6 /* GCDAsyncSocket.m */,
+				DA6F04CF1DFCAE4A003E5BB6 /* GCDAsyncUdpSocket.h */,
+				DA6F04D01DFCAE4A003E5BB6 /* GCDAsyncUdpSocket.m */,
+				DA6F04CC1DFCAE0B003E5BB6 /* CocoaAsyncSocket.h */,
 				DA67510C1DB9C0160087D9ED /* Main.storyboard */,
 				DAD891FE1DEA308F00493A56 /* swichon.png */,
 				DA06BCA71DE7575C00B04F48 /* 校准按钮.png */,
@@ -321,6 +333,7 @@
 			knownRegions = (
 				en,
 				Base,
+				English,
 			);
 			mainGroup = DA6750FC1DB9C0150087D9ED;
 			productRefGroup = DA6751061DB9C0160087D9ED /* Products */;
@@ -381,11 +394,13 @@
 				DA6751111DB9C0160087D9ED /* FGYoke.xcdatamodeld in Sources */,
 				DA67510B1DB9C0160087D9ED /* ViewController.swift in Sources */,
 				DA6751091DB9C0160087D9ED /* AppDelegate.swift in Sources */,
+				DA6F04D21DFCAE4A003E5BB6 /* GCDAsyncUdpSocket.m in Sources */,
 				DA82B7EA1DF292D900DC210F /* ytcpsocket.swift in Sources */,
 				DA82B7EB1DF292D900DC210F /* yudpsocket.c in Sources */,
 				DA82B7EC1DF292D900DC210F /* yudpsocket.swift in Sources */,
 				DA9723511DDB9745002F92B9 /* AboutViewController.swift in Sources */,
 				DA6864B91DC5427400F24FA0 /* SettingsViewController.swift in Sources */,
+				DA6F04D11DFCAE4A003E5BB6 /* GCDAsyncSocket.m in Sources */,
 				DA82B7E91DF292D900DC210F /* ytcpsocket.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

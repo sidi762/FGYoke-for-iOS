@@ -18,6 +18,8 @@
 import UIKit
 import CoreData
 import CoreMotion
+//import CocoaAsyncSocket
+
 var isConnected:Bool = false
 var isWorking:Bool = false
 var xdata:Double = 0.0
