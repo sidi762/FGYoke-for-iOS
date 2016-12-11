@@ -18,7 +18,7 @@
 import UIKit
 import CoreData
 import CoreMotion
-//import CocoaAsyncSocket
+import CocoaAsyncSocket
 
 var isConnected:Bool = false
 var isWorking:Bool = false
@@ -28,7 +28,7 @@ var calibrateDataX:Double = 0.0
 var calibrateDataY:Double = 0.0
 var isAcWorking = false
 var debugInfoText = "nothing"
-class ViewController: UIViewController {
+class ViewController: UIViewController,GCDAsyncSocketDelegate  {
 
     @IBOutlet weak var debugInfo: UILabel!
     @IBOutlet weak var yokepic: UIImageView!
@@ -40,7 +40,9 @@ class ViewController: UIViewController {
 //  @IBOutlet weak var testbut: UIButton!
    
     var cmm = CMMotionManager()
-    var client:TCPClient = TCPClient()
+//    var client:TCPClient = TCPClient() //旧Socket
+    var clientSocket:GCDAsyncSocket!
+
    
 //    @IBAction func testconnect(_ sender: UIButton) {
 //        connect(addre: "localhost", portt: 12345)
@@ -78,32 +80,59 @@ class ViewController: UIViewController {
     
     
     func startWorking(){
-        client = TCPClient(addr: acipaddre, port: acport!)
-        var (success, errmsg) = client.connect(timeout: 2)
-        if success {
-            print("success")
-            debugInfoText = "success to connect"
+        clientSocket = GCDAsyncSocket()
+        clientSocket.delegate = self
+        clientSocket.delegateQueue = DispatchQueue.global()
+        do{
+            try clientSocket.connect(toHost: acipaddre, onPort: (UInt16)(acport!), viaInterface: nil, withTimeout: 2)
             isConnected = true
-            self.yokepic.isHidden = false
-            swichIsOn()
-            mainActivity()
-            isWorking = true
-            self.debugInfo.text = debugInfoText
-        } else {
-            print(errmsg)
-            debugInfoText = errmsg
-            stopWorking()
-            
-            
-        }
 
+        }catch{
+            print("error")
+            stopWorking()
+            isConnected = false
+            
+            }
+        if(clientSocket.isDisconnected == false){
+        print("success")
+        self.yokepic.isHidden = false
+        swichIsOn()
+        mainActivity()
+        isWorking = true
+        debugInfoText = "success to connect"
+        self.debugInfo.text = debugInfoText
+        }
+        
+
+
+        
+//        client = TCPClient(addr: acipaddre, port: acport!)
+//        var (success, errmsg) = client.connect(timeout: 2)
+//        if success {
+//            print("success")
+//            debugInfoText = "success to connect"
+//            isConnected = true
+//            self.yokepic.isHidden = false
+//            swichIsOn()
+//            mainActivity()
+//            isWorking = true
+//            self.debugInfo.text = debugInfoText
+//        } else {
+//            print(errmsg)
+//            debugInfoText = errmsg
+//            stopWorking()
+//            
+//            
+//        }
+//
     }
     
     func stopWorking(){
         yokepic.isHidden = true
         calibrateButton.isHidden = true
         swichIsTriped()
-        client.close()
+//        client.close()
+        clientSocket?.disconnect()
         isConnected = false
         isWorking = false
         self.debugInfo.text = debugInfoText
@@ -115,8 +144,7 @@ class ViewController: UIViewController {
         }else{
             self.debugInfo.isHidden = true
         }
-
-        if(isWorking==false){
+            if(isWorking==false){
             if(acipaddre != ""){
                 if(acport != nil){
                     startWorking()
@@ -164,6 +192,7 @@ class ViewController: UIViewController {
                         self.debugInfo.isHidden = true
                     }
                     self.debugInfo.text = debugInfoText
+                    
                     //动画
                     let animx = CABasicAnimation(keyPath: "transform.rotation")
                     animx.toValue = (accelerometerData!.acceleration.y) * 90 * (M_PI / 180) - calibrateDataX * 90 * (M_PI / 180)
@@ -182,18 +211,29 @@ class ViewController: UIViewController {
                     animationz.isRemovedOnCompletion = false
                     animationz.fillMode = kCAFillModeForwards
                     self.yokepic.layer.add(animationz, forKey: nil)
-                    //发送至FG
-                    let (success, errmsg) = self.client.send(str:"\((Float)(accelerometerData!.acceleration.y)-(Float)(calibrateDataX)),\((Float)(-accelerometerData!.acceleration.z)+(Float)(calibrateDataY))\n")
-                    if success {
-                        print("success")
-                        debugInfoText = "success to connect"
-                        
-                    } else {
-                        print(errmsg)
-                        debugInfoText = errmsg
+                    //旧socket发送至FG
+//                    let (success, errmsg) = self.client.send(str:"\((Float)(accelerometerData!.acceleration.y)-(Float)(calibrateDataX)),\((Float)(-accelerometerData!.acceleration.z)+(Float)(calibrateDataY))\n")
+//                    if success {
+//                        print("success")
+//                        debugInfoText = "success to connect"
+//                    } else {
+//                        print(errmsg)
+//                        debugInfoText = errmsg
+//                    }
+                    //新socket发送
+                    let sentData = "\((Float)(accelerometerData!.acceleration.y)-(Float)(calibrateDataX)),\((Float)(-accelerometerData!.acceleration.z)+(Float)(calibrateDataY))\n"
+                    self.clientSocket?.write(sentData.data(using: String.Encoding(rawValue: String.Encoding.utf8.rawValue))!, withTimeout: -1, tag: 0)
+                    //判断是否断线
+                    if(self.clientSocket.isConnected == false){
+                        if(self.clientSocket.isDisconnected == true){
+                        self.stopWorking()
+                        self.cmm.stopAccelerometerUpdates()
+                        }
                     }
+                    
 
                 }
+                
             }
                         }else{
             //无加速度传感器

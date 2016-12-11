@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E98F9A2ACB1D9A2E568BF65 /* Pods_FGYoke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5855B508318F8DE632501F4C /* Pods_FGYoke.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		DA06BCA91DE7575D00B04F48 /* 校准按钮.png in Resources */ = {isa = PBXBuildFile; fileRef = DA06BCA71DE7575C00B04F48 /* 校准按钮.png */; };
 		DA06BCAB1DE758D800B04F48 /* calibrate.png in Resources */ = {isa = PBXBuildFile; fileRef = DA06BCAA1DE758D800B04F48 /* calibrate.png */; };
 		DA49B83F1DC3BB1800A2D673 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = DA49B83E1DC3BB1800A2D673 /* settings.png */; };
@@ -25,8 +26,6 @@
 		DA6751481DB9C0F60087D9ED /* yokebg.png in Resources */ = {isa = PBXBuildFile; fileRef = DA6751431DB9C0F60087D9ED /* yokebg.png */; };
 		DA67514A1DB9C3810087D9ED /* skyalliance logo.png in Resources */ = {isa = PBXBuildFile; fileRef = DA6751491DB9C3810087D9ED /* skyalliance logo.png */; };
 		DA6864B91DC5427400F24FA0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6864B81DC5427400F24FA0 /* SettingsViewController.swift */; };
-		DA6F04D11DFCAE4A003E5BB6 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6F04CE1DFCAE4A003E5BB6 /* GCDAsyncSocket.m */; };
-		DA6F04D21DFCAE4A003E5BB6 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6F04D01DFCAE4A003E5BB6 /* GCDAsyncUdpSocket.m */; };
 		DA82B7E81DF292D900DC210F /* ysocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA82B7E31DF292D900DC210F /* ysocket.swift */; };
 		DA82B7E91DF292D900DC210F /* ytcpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = DA82B7E41DF292D900DC210F /* ytcpsocket.c */; };
 		DA82B7EA1DF292D900DC210F /* ytcpsocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA82B7E51DF292D900DC210F /* ytcpsocket.swift */; };
@@ -68,6 +67,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2C5E44326EDA489E2347EDE9 /* Pods-FGYoke.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FGYoke.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FGYoke/Pods-FGYoke.debug.xcconfig"; sourceTree = "<group>"; };
+		5855B508318F8DE632501F4C /* Pods_FGYoke.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FGYoke.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA06BCA71DE7575C00B04F48 /* 校准按钮.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "校准按钮.png"; sourceTree = "<group>"; };
 		DA06BCAA1DE758D800B04F48 /* calibrate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calibrate.png; sourceTree = "<group>"; };
 		DA477D771DEAA09E00EA37D4 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
@@ -94,11 +95,6 @@
 		DA6751431DB9C0F60087D9ED /* yokebg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = yokebg.png; path = "../../../../模拟飞行/FlightGear/FG Yoke Proj/yokebg.png"; sourceTree = "<group>"; };
 		DA6751491DB9C3810087D9ED /* skyalliance logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "skyalliance logo.png"; path = "../../../../模拟飞行/涂装/IFSLAnewlogo/skyalliance logo.png"; sourceTree = "<group>"; };
 		DA6864B81DC5427400F24FA0 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		DA6F04CC1DFCAE0B003E5BB6 /* CocoaAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CocoaAsyncSocket.h; path = ../../../../../../Documents/CocoaAsyncSocket/Source/CocoaAsyncSocket.h; sourceTree = "<group>"; };
-		DA6F04CD1DFCAE4A003E5BB6 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCDAsyncSocket.h; path = ../../../../../../Documents/CocoaAsyncSocket/Source/GCD/GCDAsyncSocket.h; sourceTree = "<group>"; };
-		DA6F04CE1DFCAE4A003E5BB6 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCDAsyncSocket.m; path = ../../../../../../Documents/CocoaAsyncSocket/Source/GCD/GCDAsyncSocket.m; sourceTree = "<group>"; };
-		DA6F04CF1DFCAE4A003E5BB6 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCDAsyncUdpSocket.h; path = ../../../../../../Documents/CocoaAsyncSocket/Source/GCD/GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
-		DA6F04D01DFCAE4A003E5BB6 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCDAsyncUdpSocket.m; path = ../../../../../../Documents/CocoaAsyncSocket/Source/GCD/GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
 		DA82B7E21DF292D800DC210F /* FGYoke-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FGYoke-Bridging-Header.h"; sourceTree = "<group>"; };
 		DA82B7E31DF292D900DC210F /* ysocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ysocket.swift; path = ysocket/ysocket.swift; sourceTree = "<group>"; };
 		DA82B7E41DF292D900DC210F /* ytcpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ytcpsocket.c; path = ysocket/ytcpsocket.c; sourceTree = "<group>"; };
@@ -108,6 +104,7 @@
 		DA9723501DDB9745002F92B9 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		DAD891FC1DEA2FD600493A56 /* swichoff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swichoff.png; sourceTree = "<group>"; };
 		DAD891FE1DEA308F00493A56 /* swichon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swichon.png; sourceTree = "<group>"; };
+		DEC592C9A45909855E6BB62C /* Pods-FGYoke.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FGYoke.release.xcconfig"; path = "Pods/Target Support Files/Pods-FGYoke/Pods-FGYoke.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +114,7 @@
 			files = (
 				DA67513D1DB9C0870087D9ED /* ExternalAccessory.framework in Frameworks */,
 				DA67513B1DB9C0740087D9ED /* MapKit.framework in Frameworks */,
+				9E98F9A2ACB1D9A2E568BF65 /* Pods_FGYoke.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,12 +135,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B1C52B8D7EDED9E412F5C13 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2C5E44326EDA489E2347EDE9 /* Pods-FGYoke.debug.xcconfig */,
+				DEC592C9A45909855E6BB62C /* Pods-FGYoke.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		DA6750FC1DB9C0150087D9ED = {
 			isa = PBXGroup;
 			children = (
 				DA6751071DB9C0160087D9ED /* FGYoke */,
 				DA6751061DB9C0160087D9ED /* Products */,
 				DA6751391DB9C0740087D9ED /* Frameworks */,
+				7B1C52B8D7EDED9E412F5C13 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -167,18 +175,13 @@
 				DA67513E1DB9C0870087D9ED /* FGYoke.entitlements */,
 				DA6751081DB9C0160087D9ED /* AppDelegate.swift */,
 				DA67510A1DB9C0160087D9ED /* ViewController.swift */,
-				DA6F04CD1DFCAE4A003E5BB6 /* GCDAsyncSocket.h */,
-				DA6F04CE1DFCAE4A003E5BB6 /* GCDAsyncSocket.m */,
-				DA6F04CF1DFCAE4A003E5BB6 /* GCDAsyncUdpSocket.h */,
-				DA6F04D01DFCAE4A003E5BB6 /* GCDAsyncUdpSocket.m */,
-				DA6F04CC1DFCAE0B003E5BB6 /* CocoaAsyncSocket.h */,
 				DA67510C1DB9C0160087D9ED /* Main.storyboard */,
 				DAD891FE1DEA308F00493A56 /* swichon.png */,
 				DA06BCA71DE7575C00B04F48 /* 校准按钮.png */,
 				DAD891FC1DEA2FD600493A56 /* swichoff.png */,
 				DA9723501DDB9745002F92B9 /* AboutViewController.swift */,
-				DA6864B81DC5427400F24FA0 /* SettingsViewController.swift */,
 				DA6751121DB9C0160087D9ED /* Assets.xcassets */,
+				DA6864B81DC5427400F24FA0 /* SettingsViewController.swift */,
 				DA67513F1DB9C0F60087D9ED /* background.png */,
 				DA49B83E1DC3BB1800A2D673 /* settings.png */,
 				DA06BCAA1DE758D800B04F48 /* calibrate.png */,
@@ -203,6 +206,7 @@
 				DA67513C1DB9C0870087D9ED /* ExternalAccessory.framework */,
 				DA67513A1DB9C0740087D9ED /* MapKit.framework */,
 				DA477D771DEAA09E00EA37D4 /* IntentsUI.framework */,
+				5855B508318F8DE632501F4C /* Pods_FGYoke.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -214,10 +218,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DA6751301DB9C0170087D9ED /* Build configuration list for PBXNativeTarget "FGYoke" */;
 			buildPhases = (
+				3AD43D0322315FF7BAC15E74 /* 📦 Check Pods Manifest.lock */,
 				DA6751011DB9C0150087D9ED /* Sources */,
 				DA6751021DB9C0150087D9ED /* Frameworks */,
 				DA6751031DB9C0150087D9ED /* Resources */,
 				DA477D8C1DEAA09E00EA37D4 /* Embed App Extensions */,
+				E0B388BDEECCFA71F5C7D7E3 /* 📦 Embed Pods Frameworks */,
+				70D89E9B7E27BF99C2ACB84C /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -385,6 +392,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3AD43D0322315FF7BAC15E74 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		70D89E9B7E27BF99C2ACB84C /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FGYoke/Pods-FGYoke-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E0B388BDEECCFA71F5C7D7E3 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FGYoke/Pods-FGYoke-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DA6751011DB9C0150087D9ED /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -394,13 +449,11 @@
 				DA6751111DB9C0160087D9ED /* FGYoke.xcdatamodeld in Sources */,
 				DA67510B1DB9C0160087D9ED /* ViewController.swift in Sources */,
 				DA6751091DB9C0160087D9ED /* AppDelegate.swift in Sources */,
-				DA6F04D21DFCAE4A003E5BB6 /* GCDAsyncUdpSocket.m in Sources */,
 				DA82B7EA1DF292D900DC210F /* ytcpsocket.swift in Sources */,
 				DA82B7EB1DF292D900DC210F /* yudpsocket.c in Sources */,
 				DA82B7EC1DF292D900DC210F /* yudpsocket.swift in Sources */,
 				DA9723511DDB9745002F92B9 /* AboutViewController.swift in Sources */,
 				DA6864B91DC5427400F24FA0 /* SettingsViewController.swift in Sources */,
-				DA6F04D11DFCAE4A003E5BB6 /* GCDAsyncSocket.m in Sources */,
 				DA82B7E91DF292D900DC210F /* ytcpsocket.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -551,6 +604,7 @@
 		};
 		DA6751311DB9C0170087D9ED /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C5E44326EDA489E2347EDE9 /* Pods-FGYoke.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -570,6 +624,7 @@
 		};
 		DA6751321DB9C0170087D9ED /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DEC592C9A45909855E6BB62C /* Pods-FGYoke.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
