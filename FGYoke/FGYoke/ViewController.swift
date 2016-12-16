@@ -12,7 +12,9 @@
 //        !!!!无法连接！！！！√
 //todo: 校准√
 //      增加开关图片√
-//      增加更多用户提示
+//      增加更多用户提示？
+//      首次进入增加教程提示?
+//      增加推力手柄
 //      增加尾舵支持
 import UIKit
 import CoreData
@@ -75,6 +77,16 @@ class ViewController: UIViewController,GCDAsyncSocketDelegate  {
         yokepic.isHidden = true
         calibrateButton.isHidden=true
         debugInfo.isHidden = true
+        //判断是否第一次启动：
+        if((UserDefaults.standard.bool(forKey: "IsFirstLaunch") as Bool!) == false){
+            //第一次启动，播放引导页面
+            print("第一次启动")
+            showAlert(inmessage: "Tutorial 教程：http://wiki.flightgear.org/Yoke_for_FlightGear")
+            //设置为非第一次启动
+            UserDefaults.standard.set(true, forKey: "IsFirstLaunch")
+        }else{
+            print("不是第一次启动")
+            }
         }
     
     
@@ -148,10 +160,13 @@ class ViewController: UIViewController,GCDAsyncSocketDelegate  {
                 if(acport != nil){
                     startWorking()
                 }else{
+                    showAlert(inmessage: "Port number cannot be empty 请输入端口号")
                     stopWorking()
                     }
             }else{
                 stopWorking()
+                showAlert(inmessage: "IP address cannot be empty 请输入IP地址")
+
             }
                     }else{
              stopWorking()
@@ -236,8 +251,7 @@ class ViewController: UIViewController,GCDAsyncSocketDelegate  {
             }
                         }else{
             //无加速度传感器
-            let aler = UIAlertView(title:"您的设备不支持加速度传感器 Your device doesn't support accelerometer",message:nil,delegate:nil ,cancelButtonTitle:"OK")
-            aler.show()
+              showAlert(inmessage: "您的设备不支持加速度传感器 Your device doesn't support accelerometer")
               xlabel.text="error"
               ylabel.text="error"
               zlabel.text="error"
@@ -255,14 +269,20 @@ class ViewController: UIViewController,GCDAsyncSocketDelegate  {
               animationzer.duration = 0.01
               animationzer.isRemovedOnCompletion = false
               animationzer.fillMode = kCAFillModeForwards
-            self.yokepic.layer.add(animationzer, forKey: nil)
-
+              self.yokepic.layer.add(animationzer, forKey: nil)
+              stopWorking()
+ 
             }
         
     }
     
 
-    
+    func showAlert(inmessage:String){
+        let alert = UIAlertController(title: nil , message: inmessage, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK",style: .default,handler: nil)
+        alert.addAction(action)
+        present(alert,animated: true, completion: nil)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
