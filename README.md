@@ -1,2 +1,3 @@
 # FGYoke-for-iOS
-Yoke Emulation for FlightGear(incomplete)
+Yoke for FlightGear(1.0.0(8))
+Avalible in Apple Appstore

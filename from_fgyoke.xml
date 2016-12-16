@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<PropertyList>
+    <generic>
+        <input>
+            <line_separator>newline</line_separator>
+            <var_separator>,</var_separator>
+            <chunk>
+                <name>aileron</name>
+                <type>float</type>
+                <format>%f</format>
+                <node>/controls/flight/aileron</node>
+            </chunk>
+            <chunk>
+                <name>elevator</name>
+                <type>float</type>
+                <format>%f</format>
+                <node>/controls/flight/elevator</node>
+            </chunk>
+        </input>
+    </generic>
+</PropertyList>
+
