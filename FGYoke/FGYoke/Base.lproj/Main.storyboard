@@ -201,6 +201,8 @@
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="portinputed:" destination="3Iz-sA-6je" eventType="editingDidEnd" id="eXM-XY-FnU"/>
+                                    <action selector="textField:" destination="3Iz-sA-6je" eventType="editingDidEnd" id="XxU-2R-jc9"/>
+                                    <action selector="textField:" destination="3Iz-sA-6je" eventType="editingDidEndOnExit" id="qZ3-TN-2j6"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="IP Address 请输入IP地址" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rJz-dJ-f3L">
@@ -211,6 +213,8 @@
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="ipinputed:" destination="3Iz-sA-6je" eventType="editingDidEnd" id="Mxv-dT-hfQ"/>
+                                    <action selector="textField:" destination="3Iz-sA-6je" eventType="editingDidEndOnExit" id="WKf-uc-uvu"/>
+                                    <action selector="textField:" destination="3Iz-sA-6je" eventType="editingDidEnd" id="zq7-kD-uIa"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="IP: 0.0.0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FWY-nk-6U1">

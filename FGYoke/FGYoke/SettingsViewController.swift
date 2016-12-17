@@ -13,7 +13,7 @@ var strport:String?
 var devModeState = false
 
 
-class SettingsViewController: UIViewController {
+class SettingsViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var statelabel: UILabel!
 
     @IBOutlet weak var iplabel: UILabel!
@@ -27,6 +27,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var savebutton: UIButton!
     
     @IBOutlet weak var devModeSwich: UISwitch!
+    
     
     @IBAction func DevMode(_ sender: Any) {
         if(devModeState == false){
@@ -48,19 +49,32 @@ class SettingsViewController: UIViewController {
     }
             @IBAction func ipinputed(_ sender: UITextField) {
         acipaddre = self.ipinput.text!
-    }
+                   }
     
     @IBAction func portinputed(_ sender: UITextField) {
         acport = Int(self.portinput.text!)
         strport = self.portinput.text
-
-    }
+         }
     
+//    func textFieldShouldReturn(ipinput: UITextField!) -> Bool {
+//        ipinput.resignFirstResponder()
+//        return true;
+//    }
+//    func textFieldShouldReturn(portinput: UITextField!) -> Bool {
+//        portinput.resignFirstResponder()
+//        return true;
+//    }
+//    
+    @IBAction func textField(_ sender: AnyObject) {
+        self.view.endEditing(true);
+    }
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.ipinput.delegate = self
+        self.portinput.delegate = self
         if(acipaddre != ""){
         iplabel.text = "IP:" + acipaddre
         
@@ -69,6 +83,7 @@ class SettingsViewController: UIViewController {
             portlabel.text = "Port端口:" + strport!
         }
                       // Do any additional setup after loading the view.
+        
     }
     @IBAction func close(){
         dismiss(animated: true, completion: nil); }
