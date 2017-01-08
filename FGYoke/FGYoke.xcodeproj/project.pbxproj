@@ -24,7 +24,6 @@
 		DA6751461DB9C0F60087D9ED /* logo180x180.png in Resources */ = {isa = PBXBuildFile; fileRef = DA6751411DB9C0F60087D9ED /* logo180x180.png */; };
 		DA6751471DB9C0F60087D9ED /* yoke.png in Resources */ = {isa = PBXBuildFile; fileRef = DA6751421DB9C0F60087D9ED /* yoke.png */; };
 		DA6751481DB9C0F60087D9ED /* yokebg.png in Resources */ = {isa = PBXBuildFile; fileRef = DA6751431DB9C0F60087D9ED /* yokebg.png */; };
-		DA67514A1DB9C3810087D9ED /* skyalliance logo.png in Resources */ = {isa = PBXBuildFile; fileRef = DA6751491DB9C3810087D9ED /* skyalliance logo.png */; };
 		DA6864B91DC5427400F24FA0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6864B81DC5427400F24FA0 /* SettingsViewController.swift */; };
 		DA82B7E81DF292D900DC210F /* ysocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA82B7E31DF292D900DC210F /* ysocket.swift */; };
 		DA82B7E91DF292D900DC210F /* ytcpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = DA82B7E41DF292D900DC210F /* ytcpsocket.c */; };
@@ -32,6 +31,11 @@
 		DA82B7EB1DF292D900DC210F /* yudpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = DA82B7E61DF292D900DC210F /* yudpsocket.c */; };
 		DA82B7EC1DF292D900DC210F /* yudpsocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA82B7E71DF292D900DC210F /* yudpsocket.swift */; };
 		DA9723511DDB9745002F92B9 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9723501DDB9745002F92B9 /* AboutViewController.swift */; };
+		DAA8DD9F1E21B87000254244 /* skyalliance logo.png in Resources */ = {isa = PBXBuildFile; fileRef = DAA8DD9E1E21B87000254244 /* skyalliance logo.png */; };
+		DACF22631E22D61000B27B90 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACF22621E22D61000B27B90 /* GuideViewController.swift */; };
+		DACF22671E22DDD800B27B90 /* Guide01.png in Resources */ = {isa = PBXBuildFile; fileRef = DACF22641E22DDD700B27B90 /* Guide01.png */; };
+		DACF22681E22DDD800B27B90 /* Guide02.png in Resources */ = {isa = PBXBuildFile; fileRef = DACF22651E22DDD700B27B90 /* Guide02.png */; };
+		DACF22691E22DDD800B27B90 /* Guide03.png in Resources */ = {isa = PBXBuildFile; fileRef = DACF22661E22DDD700B27B90 /* Guide03.png */; };
 		DAD891FD1DEA2FD600493A56 /* swichoff.png in Resources */ = {isa = PBXBuildFile; fileRef = DAD891FC1DEA2FD600493A56 /* swichoff.png */; };
 		DAD891FF1DEA308F00493A56 /* swichon.png in Resources */ = {isa = PBXBuildFile; fileRef = DAD891FE1DEA308F00493A56 /* swichon.png */; };
 /* End PBXBuildFile section */
@@ -93,7 +97,6 @@
 		DA6751411DB9C0F60087D9ED /* logo180x180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo180x180.png; path = "../../../../模拟飞行/FlightGear/FG Yoke Proj/logo180x180.png"; sourceTree = "<group>"; };
 		DA6751421DB9C0F60087D9ED /* yoke.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = yoke.png; path = "../../../../模拟飞行/FlightGear/FG Yoke Proj/yoke.png"; sourceTree = "<group>"; };
 		DA6751431DB9C0F60087D9ED /* yokebg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = yokebg.png; path = "../../../../模拟飞行/FlightGear/FG Yoke Proj/yokebg.png"; sourceTree = "<group>"; };
-		DA6751491DB9C3810087D9ED /* skyalliance logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "skyalliance logo.png"; path = "../../../../模拟飞行/涂装/IFSLAnewlogo/skyalliance logo.png"; sourceTree = "<group>"; };
 		DA6864B81DC5427400F24FA0 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		DA82B7E21DF292D800DC210F /* FGYoke-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FGYoke-Bridging-Header.h"; sourceTree = "<group>"; };
 		DA82B7E31DF292D900DC210F /* ysocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ysocket.swift; path = ysocket/ysocket.swift; sourceTree = "<group>"; };
@@ -102,6 +105,11 @@
 		DA82B7E61DF292D900DC210F /* yudpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = yudpsocket.c; path = ysocket/yudpsocket.c; sourceTree = "<group>"; };
 		DA82B7E71DF292D900DC210F /* yudpsocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = yudpsocket.swift; path = ysocket/yudpsocket.swift; sourceTree = "<group>"; };
 		DA9723501DDB9745002F92B9 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		DAA8DD9E1E21B87000254244 /* skyalliance logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "skyalliance logo.png"; sourceTree = "<group>"; };
+		DACF22621E22D61000B27B90 /* GuideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
+		DACF22641E22DDD700B27B90 /* Guide01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Guide01.png; sourceTree = "<group>"; };
+		DACF22651E22DDD700B27B90 /* Guide02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Guide02.png; sourceTree = "<group>"; };
+		DACF22661E22DDD700B27B90 /* Guide03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Guide03.png; sourceTree = "<group>"; };
 		DAD891FC1DEA2FD600493A56 /* swichoff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swichoff.png; sourceTree = "<group>"; };
 		DAD891FE1DEA308F00493A56 /* swichon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swichon.png; sourceTree = "<group>"; };
 		DEC592C9A45909855E6BB62C /* Pods-FGYoke.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FGYoke.release.xcconfig"; path = "Pods/Target Support Files/Pods-FGYoke/Pods-FGYoke.release.xcconfig"; sourceTree = "<group>"; };
@@ -174,7 +182,11 @@
 				DA82B7E71DF292D900DC210F /* yudpsocket.swift */,
 				DA67513E1DB9C0870087D9ED /* FGYoke.entitlements */,
 				DA6751081DB9C0160087D9ED /* AppDelegate.swift */,
+				DACF22621E22D61000B27B90 /* GuideViewController.swift */,
 				DA67510A1DB9C0160087D9ED /* ViewController.swift */,
+				DACF22641E22DDD700B27B90 /* Guide01.png */,
+				DACF22651E22DDD700B27B90 /* Guide02.png */,
+				DACF22661E22DDD700B27B90 /* Guide03.png */,
 				DA67510C1DB9C0160087D9ED /* Main.storyboard */,
 				DAD891FE1DEA308F00493A56 /* swichon.png */,
 				DA06BCA71DE7575C00B04F48 /* 校准按钮.png */,
@@ -187,7 +199,7 @@
 				DA06BCAA1DE758D800B04F48 /* calibrate.png */,
 				DA6751401DB9C0F60087D9ED /* logo120x120.png */,
 				DA6751411DB9C0F60087D9ED /* logo180x180.png */,
-				DA6751491DB9C3810087D9ED /* skyalliance logo.png */,
+				DAA8DD9E1E21B87000254244 /* skyalliance logo.png */,
 				DA6751421DB9C0F60087D9ED /* yoke.png */,
 				DA6751431DB9C0F60087D9ED /* yokebg.png */,
 				DA6751141DB9C0160087D9ED /* LaunchScreen.storyboard */,
@@ -359,6 +371,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAA8DD9F1E21B87000254244 /* skyalliance logo.png in Resources */,
 				DA6751161DB9C0160087D9ED /* LaunchScreen.storyboard in Resources */,
 				DAD891FF1DEA308F00493A56 /* swichon.png in Resources */,
 				DA06BCA91DE7575D00B04F48 /* 校准按钮.png in Resources */,
@@ -368,10 +381,12 @@
 				DA67510E1DB9C0160087D9ED /* Main.storyboard in Resources */,
 				DA6751451DB9C0F60087D9ED /* logo120x120.png in Resources */,
 				DA49B83F1DC3BB1800A2D673 /* settings.png in Resources */,
-				DA67514A1DB9C3810087D9ED /* skyalliance logo.png in Resources */,
+				DACF22691E22DDD800B27B90 /* Guide03.png in Resources */,
 				DAD891FD1DEA2FD600493A56 /* swichoff.png in Resources */,
 				DA6751481DB9C0F60087D9ED /* yokebg.png in Resources */,
+				DACF22671E22DDD800B27B90 /* Guide01.png in Resources */,
 				DA6751471DB9C0F60087D9ED /* yoke.png in Resources */,
+				DACF22681E22DDD800B27B90 /* Guide02.png in Resources */,
 				DA06BCAB1DE758D800B04F48 /* calibrate.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -451,6 +466,7 @@
 				DA6751091DB9C0160087D9ED /* AppDelegate.swift in Sources */,
 				DA82B7EA1DF292D900DC210F /* ytcpsocket.swift in Sources */,
 				DA82B7EB1DF292D900DC210F /* yudpsocket.c in Sources */,
+				DACF22631E22D61000B27B90 /* GuideViewController.swift in Sources */,
 				DA82B7EC1DF292D900DC210F /* yudpsocket.swift in Sources */,
 				DA9723511DDB9745002F92B9 /* AboutViewController.swift in Sources */,
 				DA6864B91DC5427400F24FA0 /* SettingsViewController.swift in Sources */,

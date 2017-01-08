@@ -12,8 +12,8 @@
 //        !!!!无法连接！！！！√
 //todo: 校准√
 //      增加开关图片√
-//      增加更多用户提示？
-//      首次进入增加教程提示?
+//      增加更多用户提示?
+//      首次进入增加教程提示√
 //      增加推力手柄
 //      增加尾舵支持
 import UIKit
@@ -77,16 +77,7 @@ class ViewController: UIViewController,GCDAsyncSocketDelegate  {
         yokepic.isHidden = true
         calibrateButton.isHidden=true
         debugInfo.isHidden = true
-        //判断是否第一次启动：
-        if((UserDefaults.standard.bool(forKey: "IsFirstLaunch") as Bool!) == false){
-            //第一次启动，播放引导页面
-            print("第一次启动")
-            showAlert(inmessage: "Tutorial 教程：http://wiki.flightgear.org/Yoke_for_FlightGear")
-            //设置为非第一次启动
-            UserDefaults.standard.set(true, forKey: "IsFirstLaunch")
-        }else{
-            print("不是第一次启动")
-            }
+        
         }
     
     
