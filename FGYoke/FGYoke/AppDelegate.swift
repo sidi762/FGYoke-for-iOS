@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions
         launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        UIApplication.shared.isIdleTimerDisabled = true
         //增加标识，用于判断是否是第一次启动应用...
         if (!(UserDefaults.standard.bool(forKey: "everLaunched"))) {
             UserDefaults.standard.set(true, forKey:"everLaunched")
@@ -48,7 +49,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
+        UIApplication.shared.isIdleTimerDisabled = false
         self.saveContext()
+        
     }
 
     // MARK: - Core Data stack

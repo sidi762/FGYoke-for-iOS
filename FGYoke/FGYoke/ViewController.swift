@@ -10,10 +10,12 @@
 //        未完成连接时ip与port是否有值的判定?√
 //        开关有时不自动弹回√
 //        !!!!无法连接！！！！√
+//        时间长后卡顿
 //todo: 校准√
 //      增加开关图片√
 //      增加更多用户提示?
 //      首次进入增加教程提示√
+//      防止自动休眠?
 //      增加推力手柄
 //      增加尾舵支持
 import UIKit
@@ -130,6 +132,7 @@ class ViewController: UIViewController,GCDAsyncSocketDelegate  {
     }
     
     func stopWorking(){
+        self.cmm.stopAccelerometerUpdates()
         yokepic.isHidden = true
         calibrateButton.isHidden = true
         swichIsTriped()
@@ -216,16 +219,7 @@ class ViewController: UIViewController,GCDAsyncSocketDelegate  {
                     animationz.isRemovedOnCompletion = false
                     animationz.fillMode = kCAFillModeForwards
                     self.yokepic.layer.add(animationz, forKey: nil)
-                    //旧socket发送至FG
-//                    let (success, errmsg) = self.client.send(str:"\((Float)(accelerometerData!.acceleration.y)-(Float)(calibrateDataX)),\((Float)(-accelerometerData!.acceleration.z)+(Float)(calibrateDataY))\n")
-//                    if success {
-//                        print("success")
-//                        debugInfoText = "success to connect"
-//                    } else {
-//                        print(errmsg)
-//                        debugInfoText = errmsg
-//                    }
-                    //新socket发送
+                    //socket发送
                     let sentData = "\((Float)(accelerometerData!.acceleration.y)-(Float)(calibrateDataX)),\((Float)(-accelerometerData!.acceleration.z)+(Float)(calibrateDataY))\n"
                     self.clientSocket?.write(sentData.data(using: String.Encoding(rawValue: String.Encoding.utf8.rawValue))!, withTimeout: -1, tag: 0)
                     //判断是否断线
