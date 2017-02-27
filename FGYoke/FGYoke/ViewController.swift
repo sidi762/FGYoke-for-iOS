@@ -33,6 +33,8 @@ var isAcWorking = false
 var debugInfoText = "nothing"
 class ViewController: UIViewController,GCDAsyncSocketDelegate  {
 
+    @IBOutlet weak var throttleTrack: UIImageView!
+    @IBOutlet weak var throttle: UISlider!
     @IBOutlet weak var debugInfo: UILabel!
     @IBOutlet weak var yokepic: UIImageView!
     @IBOutlet weak var xlabel: UILabel!
@@ -73,6 +75,12 @@ class ViewController: UIViewController,GCDAsyncSocketDelegate  {
     }
     
     override func viewDidLoad() {
+        let throttleWidth = (CGFloat)(736/35)
+        let throttleAcWidth = self.view.frame.size.width/throttleWidth
+        let throttleImage = resizeImage(image: #imageLiteral(resourceName: "throttle.png"), newWidth: throttleAcWidth)
+        throttle.setThumbImage(throttleImage, for: UIControlState.normal)
+        throttle.transform = CGAffineTransform.init(rotationAngle: 4.71238898038469)
+        throttleTrack.transform = CGAffineTransform.init(rotationAngle: 4.71238898038469)
         isConnected = false
         super.viewDidLoad()
         cmm = CMMotionManager()
@@ -261,7 +269,19 @@ class ViewController: UIViewController,GCDAsyncSocketDelegate  {
         
     }
     
-
+    func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage? {
+        
+        let scale = newWidth / image.size.width
+        let newHeight = image.size.height * scale
+        UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
+        image.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newHeight))
+        
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage
+    }
+    
     func showAlert(inmessage:String){
         let alert = UIAlertController(title: nil , message: inmessage, preferredStyle: .alert)
         let action = UIAlertAction(title: "OK",style: .default,handler: nil)

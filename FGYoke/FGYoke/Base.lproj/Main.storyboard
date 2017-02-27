@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -53,6 +53,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="throttletrack1.png" translatesAutoresizingMaskIntoConstraints="NO" id="TRz-aX-hiJ">
+                                <rect key="frame" x="483" y="101" width="206" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rlc-Px-sy2">
                                 <rect key="frame" x="248" y="17" width="161" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -89,6 +93,12 @@
                                     <action selector="calibrateStart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T2U-4e-wXq"/>
                                 </connections>
                             </button>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-20" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="2bT-pn-4UY">
+                                <rect key="frame" x="481" y="145" width="210" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="minimumTrackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="maximumTrackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -96,6 +106,8 @@
                         <outlet property="calibrateButton" destination="2Ir-KN-gnh" id="My2-Bd-YCi"/>
                         <outlet property="debugInfo" destination="IDW-Am-S6K" id="PeC-ko-CIp"/>
                         <outlet property="swichButton" destination="Rlc-Px-sy2" id="jLO-nt-Vgq"/>
+                        <outlet property="throttle" destination="2bT-pn-4UY" id="yPF-8P-f2d"/>
+                        <outlet property="throttleTrack" destination="TRz-aX-hiJ" id="da8-ve-9xc"/>
                         <outlet property="xlabel" destination="Oh3-fq-PRg" id="r9E-y4-oUl"/>
                         <outlet property="ylabel" destination="hdG-gi-APe" id="Ebg-mG-fFP"/>
                         <outlet property="yokepic" destination="MbC-EV-9jX" id="xsJ-QD-yKJ"/>
@@ -288,6 +300,7 @@
         <image name="settings.png" width="209" height="146"/>
         <image name="skyalliance logo.png" width="1146" height="244"/>
         <image name="swichoff.png" width="227" height="74"/>
+        <image name="throttletrack1.png" width="800" height="186"/>
         <image name="yoke.png" width="800" height="401"/>
         <image name="yokebg.png" width="800" height="401"/>
     </resources>

@@ -11,6 +11,9 @@
 		DA06BCA91DE7575D00B04F48 /* 校准按钮.png in Resources */ = {isa = PBXBuildFile; fileRef = DA06BCA71DE7575C00B04F48 /* 校准按钮.png */; };
 		DA06BCAB1DE758D800B04F48 /* calibrate.png in Resources */ = {isa = PBXBuildFile; fileRef = DA06BCAA1DE758D800B04F48 /* calibrate.png */; };
 		DA49B83F1DC3BB1800A2D673 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = DA49B83E1DC3BB1800A2D673 /* settings.png */; };
+		DA5F622D1E63B3390064A458 /* throttle.png in Resources */ = {isa = PBXBuildFile; fileRef = DA5F622C1E63B3390064A458 /* throttle.png */; };
+		DA5F622F1E63B33F0064A458 /* throttletrack1.png in Resources */ = {isa = PBXBuildFile; fileRef = DA5F622E1E63B33F0064A458 /* throttletrack1.png */; };
+		DA5F62311E63BA100064A458 /* background1.png in Resources */ = {isa = PBXBuildFile; fileRef = DA5F62301E63BA100064A458 /* background1.png */; };
 		DA6751091DB9C0160087D9ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6751081DB9C0160087D9ED /* AppDelegate.swift */; };
 		DA67510B1DB9C0160087D9ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA67510A1DB9C0160087D9ED /* ViewController.swift */; };
 		DA67510E1DB9C0160087D9ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA67510C1DB9C0160087D9ED /* Main.storyboard */; };
@@ -79,6 +82,9 @@
 		DA477D8D1DEAA34900EA37D4 /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
 		DA477D8F1DEAA39400EA37D4 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		DA49B83E1DC3BB1800A2D673 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settings.png; path = "../../../../模拟飞行/FlightGear/FG Yoke Proj/settings.png"; sourceTree = "<group>"; };
+		DA5F622C1E63B3390064A458 /* throttle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = throttle.png; path = "../../../../模拟飞行/FlightGear/FG Yoke Proj/throttle.png"; sourceTree = "<group>"; };
+		DA5F622E1E63B33F0064A458 /* throttletrack1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = throttletrack1.png; path = "../../../../模拟飞行/FlightGear/FG Yoke Proj/throttletrack1.png"; sourceTree = "<group>"; };
+		DA5F62301E63BA100064A458 /* background1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background1.png; path = "../../../../模拟飞行/FlightGear/FG Yoke Proj/background1.png"; sourceTree = "<group>"; };
 		DA6751051DB9C0160087D9ED /* FGYoke.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FGYoke.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA6751081DB9C0160087D9ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA67510A1DB9C0160087D9ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -185,12 +191,15 @@
 				DACF22621E22D61000B27B90 /* GuideViewController.swift */,
 				DA67510A1DB9C0160087D9ED /* ViewController.swift */,
 				DACF22641E22DDD700B27B90 /* Guide01.png */,
+				DA5F62301E63BA100064A458 /* background1.png */,
 				DACF22651E22DDD700B27B90 /* Guide02.png */,
 				DACF22661E22DDD700B27B90 /* Guide03.png */,
 				DA67510C1DB9C0160087D9ED /* Main.storyboard */,
 				DAD891FE1DEA308F00493A56 /* swichon.png */,
 				DA06BCA71DE7575C00B04F48 /* 校准按钮.png */,
+				DA5F622C1E63B3390064A458 /* throttle.png */,
 				DAD891FC1DEA2FD600493A56 /* swichoff.png */,
+				DA5F622E1E63B33F0064A458 /* throttletrack1.png */,
 				DA9723501DDB9745002F92B9 /* AboutViewController.swift */,
 				DA6751121DB9C0160087D9ED /* Assets.xcassets */,
 				DA6864B81DC5427400F24FA0 /* SettingsViewController.swift */,
@@ -374,11 +383,13 @@
 				DAA8DD9F1E21B87000254244 /* skyalliance logo.png in Resources */,
 				DA6751161DB9C0160087D9ED /* LaunchScreen.storyboard in Resources */,
 				DAD891FF1DEA308F00493A56 /* swichon.png in Resources */,
+				DA5F62311E63BA100064A458 /* background1.png in Resources */,
 				DA06BCA91DE7575D00B04F48 /* 校准按钮.png in Resources */,
 				DA6751441DB9C0F60087D9ED /* background.png in Resources */,
 				DA6751131DB9C0160087D9ED /* Assets.xcassets in Resources */,
 				DA6751461DB9C0F60087D9ED /* logo180x180.png in Resources */,
 				DA67510E1DB9C0160087D9ED /* Main.storyboard in Resources */,
+				DA5F622F1E63B33F0064A458 /* throttletrack1.png in Resources */,
 				DA6751451DB9C0F60087D9ED /* logo120x120.png in Resources */,
 				DA49B83F1DC3BB1800A2D673 /* settings.png in Resources */,
 				DACF22691E22DDD800B27B90 /* Guide03.png in Resources */,
@@ -386,6 +397,7 @@
 				DA6751481DB9C0F60087D9ED /* yokebg.png in Resources */,
 				DACF22671E22DDD800B27B90 /* Guide01.png in Resources */,
 				DA6751471DB9C0F60087D9ED /* yoke.png in Resources */,
+				DA5F622D1E63B3390064A458 /* throttle.png in Resources */,
 				DACF22681E22DDD800B27B90 /* Guide02.png in Resources */,
 				DA06BCAB1DE758D800B04F48 /* calibrate.png in Resources */,
 			);
