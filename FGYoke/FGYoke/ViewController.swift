@@ -23,6 +23,7 @@ import CoreData
 import CoreMotion
 import CocoaAsyncSocket
 
+var throttleValue:Float = 0
 var isConnected:Bool = false
 var isWorking:Bool = false
 var xdata:Double = 0.0
@@ -52,6 +53,21 @@ class ViewController: UIViewController,GCDAsyncSocketDelegate  {
 //    @IBAction func testconnect(_ sender: UIButton) {
 //        connect(addre: "localhost", portt: 12345)
 //    }
+    
+   
+    
+    
+    @IBAction func throttleMoved(_ sender: UISlider) {
+        throttleValue = throttle.value * 0.01   
+        if(throttleValue <= 0){
+                    self.throttle.setValue(0.0, animated: true)
+                    throttleValue = 0.0
+                    }
+        print(throttleValue)
+    }
+    
+    
+    
     
     func swichIsOff(){
         swichButton.setImage(#imageLiteral(resourceName: "swichoff.png"), for: UIControlState.normal)
@@ -209,6 +225,11 @@ class ViewController: UIViewController,GCDAsyncSocketDelegate  {
                     }
                     self.debugInfo.text = debugInfoText
                     
+                    //限制推力手柄
+//                    if(throttleValue <= 0){
+//                        self.throttle.setValue(0.0, animated: true)
+//                        throttleValue = 0.0
+//                    }
                     //动画
                     let animx = CABasicAnimation(keyPath: "transform.rotation")
                     animx.toValue = (accelerometerData!.acceleration.y) * 90 * (M_PI / 180) - calibrateDataX * 90 * (M_PI / 180)
@@ -228,7 +249,7 @@ class ViewController: UIViewController,GCDAsyncSocketDelegate  {
                     animationz.fillMode = kCAFillModeForwards
                     self.yokepic.layer.add(animationz, forKey: nil)
                     //socket发送
-                    let sentData = "\((Float)(accelerometerData!.acceleration.y)-(Float)(calibrateDataX)),\((Float)(-accelerometerData!.acceleration.z)+(Float)(calibrateDataY))\n"
+                    let sentData = "\((Float)(accelerometerData!.acceleration.y)-(Float)(calibrateDataX)),\((Float)(-accelerometerData!.acceleration.z)+(Float)(calibrateDataY)),\(throttleValue),\(throttleValue),\(throttleValue),\(throttleValue)\n"
                     self.clientSocket?.write(sentData.data(using: String.Encoding(rawValue: String.Encoding.utf8.rawValue))!, withTimeout: -1, tag: 0)
                     //判断是否断线
                     if(self.clientSocket.isConnected == false){
