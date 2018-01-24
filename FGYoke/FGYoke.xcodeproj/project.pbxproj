@@ -10,6 +10,7 @@
 		9E98F9A2ACB1D9A2E568BF65 /* Pods_FGYoke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5855B508318F8DE632501F4C /* Pods_FGYoke.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		DA06BCA91DE7575D00B04F48 /* 校准按钮.png in Resources */ = {isa = PBXBuildFile; fileRef = DA06BCA71DE7575C00B04F48 /* 校准按钮.png */; };
 		DA06BCAB1DE758D800B04F48 /* calibrate.png in Resources */ = {isa = PBXBuildFile; fileRef = DA06BCAA1DE758D800B04F48 /* calibrate.png */; };
+		DA1A7E782017990400795C18 /* tmplogofgprc.png in Resources */ = {isa = PBXBuildFile; fileRef = DA1A7E772017990400795C18 /* tmplogofgprc.png */; };
 		DA49B83F1DC3BB1800A2D673 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = DA49B83E1DC3BB1800A2D673 /* settings.png */; };
 		DA5F622D1E63B3390064A458 /* throttle.png in Resources */ = {isa = PBXBuildFile; fileRef = DA5F622C1E63B3390064A458 /* throttle.png */; };
 		DA5F622F1E63B33F0064A458 /* throttletrack1.png in Resources */ = {isa = PBXBuildFile; fileRef = DA5F622E1E63B33F0064A458 /* throttletrack1.png */; };
@@ -28,11 +29,6 @@
 		DA6751471DB9C0F60087D9ED /* yoke.png in Resources */ = {isa = PBXBuildFile; fileRef = DA6751421DB9C0F60087D9ED /* yoke.png */; };
 		DA6751481DB9C0F60087D9ED /* yokebg.png in Resources */ = {isa = PBXBuildFile; fileRef = DA6751431DB9C0F60087D9ED /* yokebg.png */; };
 		DA6864B91DC5427400F24FA0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6864B81DC5427400F24FA0 /* SettingsViewController.swift */; };
-		DA82B7E81DF292D900DC210F /* ysocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA82B7E31DF292D900DC210F /* ysocket.swift */; };
-		DA82B7E91DF292D900DC210F /* ytcpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = DA82B7E41DF292D900DC210F /* ytcpsocket.c */; };
-		DA82B7EA1DF292D900DC210F /* ytcpsocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA82B7E51DF292D900DC210F /* ytcpsocket.swift */; };
-		DA82B7EB1DF292D900DC210F /* yudpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = DA82B7E61DF292D900DC210F /* yudpsocket.c */; };
-		DA82B7EC1DF292D900DC210F /* yudpsocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA82B7E71DF292D900DC210F /* yudpsocket.swift */; };
 		DA9723511DDB9745002F92B9 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9723501DDB9745002F92B9 /* AboutViewController.swift */; };
 		DAA8DD9F1E21B87000254244 /* skyalliance logo.png in Resources */ = {isa = PBXBuildFile; fileRef = DAA8DD9E1E21B87000254244 /* skyalliance logo.png */; };
 		DACF22631E22D61000B27B90 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACF22621E22D61000B27B90 /* GuideViewController.swift */; };
@@ -78,6 +74,7 @@
 		5855B508318F8DE632501F4C /* Pods_FGYoke.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FGYoke.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA06BCA71DE7575C00B04F48 /* 校准按钮.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "校准按钮.png"; sourceTree = "<group>"; };
 		DA06BCAA1DE758D800B04F48 /* calibrate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calibrate.png; sourceTree = "<group>"; };
+		DA1A7E772017990400795C18 /* tmplogofgprc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tmplogofgprc.png; sourceTree = "<group>"; };
 		DA477D771DEAA09E00EA37D4 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
 		DA477D8D1DEAA34900EA37D4 /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
 		DA477D8F1DEAA39400EA37D4 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -105,11 +102,6 @@
 		DA6751431DB9C0F60087D9ED /* yokebg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = yokebg.png; path = "../../../../模拟飞行/FlightGear/FG Yoke Proj/yokebg.png"; sourceTree = "<group>"; };
 		DA6864B81DC5427400F24FA0 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		DA82B7E21DF292D800DC210F /* FGYoke-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FGYoke-Bridging-Header.h"; sourceTree = "<group>"; };
-		DA82B7E31DF292D900DC210F /* ysocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ysocket.swift; path = ysocket/ysocket.swift; sourceTree = "<group>"; };
-		DA82B7E41DF292D900DC210F /* ytcpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ytcpsocket.c; path = ysocket/ytcpsocket.c; sourceTree = "<group>"; };
-		DA82B7E51DF292D900DC210F /* ytcpsocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ytcpsocket.swift; path = ysocket/ytcpsocket.swift; sourceTree = "<group>"; };
-		DA82B7E61DF292D900DC210F /* yudpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = yudpsocket.c; path = ysocket/yudpsocket.c; sourceTree = "<group>"; };
-		DA82B7E71DF292D900DC210F /* yudpsocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = yudpsocket.swift; path = ysocket/yudpsocket.swift; sourceTree = "<group>"; };
 		DA9723501DDB9745002F92B9 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		DAA8DD9E1E21B87000254244 /* skyalliance logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "skyalliance logo.png"; sourceTree = "<group>"; };
 		DACF22621E22D61000B27B90 /* GuideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
@@ -181,11 +173,6 @@
 		DA6751071DB9C0160087D9ED /* FGYoke */ = {
 			isa = PBXGroup;
 			children = (
-				DA82B7E31DF292D900DC210F /* ysocket.swift */,
-				DA82B7E41DF292D900DC210F /* ytcpsocket.c */,
-				DA82B7E51DF292D900DC210F /* ytcpsocket.swift */,
-				DA82B7E61DF292D900DC210F /* yudpsocket.c */,
-				DA82B7E71DF292D900DC210F /* yudpsocket.swift */,
 				DA67513E1DB9C0870087D9ED /* FGYoke.entitlements */,
 				DA6751081DB9C0160087D9ED /* AppDelegate.swift */,
 				DACF22621E22D61000B27B90 /* GuideViewController.swift */,
@@ -194,6 +181,7 @@
 				DA5F62301E63BA100064A458 /* background1.png */,
 				DACF22651E22DDD700B27B90 /* Guide02.png */,
 				DACF22661E22DDD700B27B90 /* Guide03.png */,
+				DA1A7E772017990400795C18 /* tmplogofgprc.png */,
 				DA67510C1DB9C0160087D9ED /* Main.storyboard */,
 				DAD891FE1DEA308F00493A56 /* swichon.png */,
 				DA06BCA71DE7575C00B04F48 /* 校准按钮.png */,
@@ -397,6 +385,7 @@
 				DA6751481DB9C0F60087D9ED /* yokebg.png in Resources */,
 				DACF22671E22DDD800B27B90 /* Guide01.png in Resources */,
 				DA6751471DB9C0F60087D9ED /* yoke.png in Resources */,
+				DA1A7E782017990400795C18 /* tmplogofgprc.png in Resources */,
 				DA5F622D1E63B3390064A458 /* throttle.png in Resources */,
 				DACF22681E22DDD800B27B90 /* Guide02.png in Resources */,
 				DA06BCAB1DE758D800B04F48 /* calibrate.png in Resources */,
@@ -472,17 +461,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA82B7E81DF292D900DC210F /* ysocket.swift in Sources */,
 				DA6751111DB9C0160087D9ED /* FGYoke.xcdatamodeld in Sources */,
 				DA67510B1DB9C0160087D9ED /* ViewController.swift in Sources */,
 				DA6751091DB9C0160087D9ED /* AppDelegate.swift in Sources */,
-				DA82B7EA1DF292D900DC210F /* ytcpsocket.swift in Sources */,
-				DA82B7EB1DF292D900DC210F /* yudpsocket.c in Sources */,
 				DACF22631E22D61000B27B90 /* GuideViewController.swift in Sources */,
-				DA82B7EC1DF292D900DC210F /* yudpsocket.swift in Sources */,
 				DA9723511DDB9745002F92B9 /* AboutViewController.swift in Sources */,
 				DA6864B91DC5427400F24FA0 /* SettingsViewController.swift in Sources */,
-				DA82B7E91DF292D900DC210F /* ytcpsocket.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

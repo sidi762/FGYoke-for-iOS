@@ -3,7 +3,7 @@
 //  FGYoke
 //
 //  Created by 梁思地 on 10/20/16.
-//  Copyright © 2016 梁思地 FGPRC. All rights reserved.
+//  Copyright © 2016-2017 梁思地 FGPRC. All rights reserved.
 //
 
 //bug记录：未完成点击保存时ip与port输入框是否为空判定√
@@ -150,6 +150,8 @@ class ViewController: UIViewController,GCDAsyncSocketDelegate  {
         cmm = CMMotionManager()
         yokepic.isHidden = true
         calibrateButton.isHidden=true
+        throttleTrack.isHidden = true
+        throttle.isHidden = true
         debugInfo.isHidden = true
         
         }
@@ -170,12 +172,12 @@ class ViewController: UIViewController,GCDAsyncSocketDelegate  {
             
             }
         if(clientSocket.isDisconnected == false){
-        print("success")
-        self.yokepic.isHidden = false
-        swichIsOn()
-        mainActivity()
-        isWorking = true
-        debugInfoText = "success to connect"
+            print("success")
+            self.yokepic.isHidden = false
+            swichIsOn()
+            mainActivity()
+            isWorking = true
+            debugInfoText = "success to connect"
         self.debugInfo.text = debugInfoText
         }
         
@@ -207,8 +209,9 @@ class ViewController: UIViewController,GCDAsyncSocketDelegate  {
         self.cmm.stopAccelerometerUpdates()
         yokepic.isHidden = true
         calibrateButton.isHidden = true
+        throttleTrack.isHidden = true
+        throttle.isHidden = true
         swichIsTriped()
-//        client.close()
         clientSocket?.disconnect()
         isConnected = false
         isWorking = false
@@ -226,12 +229,12 @@ class ViewController: UIViewController,GCDAsyncSocketDelegate  {
                 if(acport != nil){
                     startWorking()
                 }else{
-                    showAlert(inmessage: "Port number cannot be empty 请输入端口号")
+                    showAlert(inmessage: "Port number cannot be empty.\n请输入端口号")
                     stopWorking()
                     }
             }else{
                 stopWorking()
-                showAlert(inmessage: "IP address cannot be empty 请输入IP地址")
+                showAlert(inmessage: "IP address cannot be empty.\n请输入IP地址")
 
             }
                     }else{
@@ -251,6 +254,8 @@ class ViewController: UIViewController,GCDAsyncSocketDelegate  {
     
     func mainActivity(){
         calibrateButton.isHidden = false
+        throttleTrack.isHidden = false
+        throttle.isHidden = false
 //        var accelerometerData="0"
 //        var error="0"
         cmm.accelerometerUpdateInterval = 0.05
@@ -281,7 +286,7 @@ class ViewController: UIViewController,GCDAsyncSocketDelegate  {
 //                    }
                     //动画
                     let animx = CABasicAnimation(keyPath: "transform.rotation")
-                    animx.toValue = (accelerometerData!.acceleration.y) * 90 * (M_PI / 180) - calibrateDataX * 90 * (M_PI / 180)
+                    animx.toValue = (accelerometerData!.acceleration.y) * 90 * (Double.pi / 180) - calibrateDataX * 90 * (Double.pi / 180)
                     animx.duration = 0.3
                     animx.repeatCount = 1
                     animx.isRemovedOnCompletion = false
@@ -319,7 +324,7 @@ class ViewController: UIViewController,GCDAsyncSocketDelegate  {
               ylabel.text="error"
               zlabel.text="error"
               let animxer = CABasicAnimation(keyPath: "transform.rotation")
-              animxer.toValue = 0.9 * 90 * (M_PI / 180)
+              animxer.toValue = 0.9 * 90 * (Double.pi / 180)
               animxer.repeatCount = 1
               animxer.duration = 0.001
               animxer.isRemovedOnCompletion = false
