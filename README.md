@@ -1,3 +1,2 @@
 # FGYoke-for-iOS
-Yoke for FlightGear(1.0.0(8))
-Avalible in Apple Appstore
+Yoke for FlightGear(1.1.2(25))  Version 1.1.1 Avalible in Apple Appstore
