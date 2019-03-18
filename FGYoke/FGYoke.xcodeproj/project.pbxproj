@@ -71,7 +71,7 @@
 
 /* Begin PBXFileReference section */
 		2C5E44326EDA489E2347EDE9 /* Pods-FGYoke.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FGYoke.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FGYoke/Pods-FGYoke.debug.xcconfig"; sourceTree = "<group>"; };
-		5855B508318F8DE632501F4C /* Pods_FGYoke.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FGYoke.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5855B508318F8DE632501F4C /* Pods_FGYoke.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_FGYoke.framework; path = "../Debug-iphonesimulator/Pods_FGYoke.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA06BCA71DE7575C00B04F48 /* 校准按钮.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "校准按钮.png"; sourceTree = "<group>"; };
 		DA06BCAA1DE758D800B04F48 /* calibrate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calibrate.png; sourceTree = "<group>"; };
 		DA1A7E772017990400795C18 /* tmplogofgprc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tmplogofgprc.png; sourceTree = "<group>"; };
