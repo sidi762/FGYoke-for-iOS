@@ -79,11 +79,11 @@ class ViewController: UIViewController,GCDAsyncSocketDelegate  {
     
     
     func swichIsOff(){
-        swichButton.setImage(#imageLiteral(resourceName: "swichoff.png"), for: UIControlState.normal)
+        swichButton.setImage(#imageLiteral(resourceName: "swichoff.png"), for: UIControl.State.normal)
     }
     
     func swichIsOn(){
-        swichButton.setImage(#imageLiteral(resourceName: "swichon.png"), for: UIControlState.normal)
+        swichButton.setImage(#imageLiteral(resourceName: "swichon.png"), for: UIControl.State.normal)
     }
     
     func swichIsTriped(){
@@ -94,16 +94,13 @@ class ViewController: UIViewController,GCDAsyncSocketDelegate  {
 
         })
         
-
-        
-        
     }
     
     override func viewDidLoad() {
         let throttleWidth = (CGFloat)(736/35)
         let throttleAcWidth = self.view.frame.size.width/throttleWidth
         let throttleImage = resizeImage(image: #imageLiteral(resourceName: "throttle.png"), newWidth: throttleAcWidth)
-        throttle.setThumbImage(throttleImage, for: UIControlState.normal)
+        throttle.setThumbImage(throttleImage, for: UIControl.State.normal)
         throttle.transform = CGAffineTransform.init(rotationAngle: 4.71238898038469)
         throttleTrack.transform = CGAffineTransform.init(rotationAngle: 4.71238898038469)
         isConnected = false
@@ -198,7 +195,7 @@ class ViewController: UIViewController,GCDAsyncSocketDelegate  {
         cmm.accelerometerUpdateInterval = 0.05
         if cmm.isAccelerometerAvailable{
             cmm.startAccelerometerUpdates(to: OperationQueue.main) {[weak self](accelerometerData:CMAccelerometerData?,error:Error?) in
-                if let strongSelf = self {
+                if self != nil {
                     if error != nil{
                         self?.cmm.stopAccelerometerUpdates()
                     }else{
@@ -225,7 +222,7 @@ class ViewController: UIViewController,GCDAsyncSocketDelegate  {
                         animx.duration = 0.3
                         animx.repeatCount = 1
                         animx.isRemovedOnCompletion = false
-                        animx.fillMode = kCAFillModeForwards
+                        animx.fillMode = CAMediaTimingFillMode.forwards
                         self?.yokepic.layer.add(animx, forKey: nil)
                         let animationz = CABasicAnimation(keyPath: "bounds.size")
                         animationz.fromValue = NSValue(cgSize: (self?.yokepic.frame.size)!)
@@ -235,7 +232,7 @@ class ViewController: UIViewController,GCDAsyncSocketDelegate  {
                         animationz.toValue = NSValue(cgSize:(size))
                         animationz.duration = 0.01
                         animationz.isRemovedOnCompletion = false
-                        animationz.fillMode = kCAFillModeForwards
+                        animationz.fillMode = CAMediaTimingFillMode.forwards
                         self?.yokepic.layer.add(animationz, forKey: nil)
                         
                         //socket发送
@@ -266,7 +263,7 @@ class ViewController: UIViewController,GCDAsyncSocketDelegate  {
             animxer.repeatCount = 1
             animxer.duration = 0.001
             animxer.isRemovedOnCompletion = false
-            animxer.fillMode = kCAFillModeForwards
+            animxer.fillMode = CAMediaTimingFillMode.forwards
             self.yokepic.layer.add(animxer, forKey: nil)
             let animationzer = CABasicAnimation(keyPath: "bounds.size")
             animationzer.fromValue = NSValue(cgSize: self.yokepic.frame.size)
@@ -274,7 +271,7 @@ class ViewController: UIViewController,GCDAsyncSocketDelegate  {
             animationzer.toValue = NSValue(cgSize:(size))
             animationzer.duration = 0.01
             animationzer.isRemovedOnCompletion = false
-            animationzer.fillMode = kCAFillModeForwards
+            animationzer.fillMode = CAMediaTimingFillMode.forwards
             self.yokepic.layer.add(animationzer, forKey: nil)
             stopWorking()
         }
