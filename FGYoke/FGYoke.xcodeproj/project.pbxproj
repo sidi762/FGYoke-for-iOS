@@ -293,7 +293,7 @@
 					DA6751041DB9C0150087D9ED = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = E499ZXTYV7;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -344,12 +344,11 @@
 			};
 			buildConfigurationList = DA6751001DB9C0150087D9ED /* Build configuration list for PBXProject "FGYoke" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
-				English,
 			);
 			mainGroup = DA6750FC1DB9C0150087D9ED;
 			productRefGroup = DA6751061DB9C0160087D9ED /* Products */;
@@ -647,8 +646,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "FGYoke/FGYoke-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -667,8 +665,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.FGPRC.YokeforFlightGear;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "FGYoke/FGYoke-Bridging-Header.h";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
