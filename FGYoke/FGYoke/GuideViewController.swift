@@ -13,6 +13,14 @@ class GuideViewController: UIViewController,UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         let frame = self.view.bounds
+        
+        //更新提示
+        let alert = UIAlertController(title: nil , message: "Welcome! This message indicates this software has been successfully updated. Don't forget to update your from_fgyoke.xml!", preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK",style: .default,handler: nil)
+                        alert.addAction(action)
+                        present(alert,animated: true, completion: nil)
+               
+        
         //scrollView的初始化
         let scrollView = UIScrollView()
         scrollView.frame = self.view.bounds
@@ -50,15 +58,7 @@ class GuideViewController: UIViewController,UIScrollViewDelegate {
             let viewController = mainStoryboard.instantiateInitialViewController()
             self.present(viewController!, animated: true, completion:nil)
         }
-//        let alert = UIAlertController(title: nil , message: "Tutorial 教程：http://wiki.flightgear.org/Yoke_for_FlightGear", preferredStyle: .alert)
-//                    let action = UIAlertAction(title: "OK",style: .default,handler: nil)
-//                    alert.addAction(action)
-//                    present(alert,animated: true, completion: nil)
-//            let mainStoryboard = UIStoryboard(name:"Main", bundle:nil)
-//            let viewController = mainStoryboard.instantiateInitialViewController()
-//            self.present(viewController!, animated: true, completion:nil)
-
-        
+    
 
         // Do any additional setup after loading the view.
     }

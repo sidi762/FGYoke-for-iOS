@@ -3,7 +3,7 @@
 //  FGYoke
 //
 //  Created by 梁思地 on 10/20/16.
-//  Copyright © 2016-2019 梁思地 FGPRC. All rights reserved.
+//  Copyright © 2016-2020 梁思地 FGPRC. All rights reserved.
 //
 
 //bug记录：未完成点击保存时ip与port输入框是否为空判定√
@@ -236,7 +236,7 @@ class ViewController: UIViewController,GCDAsyncSocketDelegate  {
                         self?.yokepic.layer.add(animationz, forKey: nil)
                         
                         //socket发送
-                        let sentData = "\((Float)(accelerometerData!.acceleration.y)-(Float)(calibrateDataX)),\((Float)(-accelerometerData!.acceleration.z)+(Float)(calibrateDataY)),\(throttleValue),\(throttleValue),\(throttleValue),\(throttleValue)\n"
+                        let sentData = "\((Float)(accelerometerData!.acceleration.y)-(Float)(calibrateDataX)),\((Float)(-accelerometerData!.acceleration.z)+(Float)(calibrateDataY)),\(throttleValue)\n"
                         
                         self?.clientSocket?.write(sentData.data(using: String.Encoding(rawValue: String.Encoding.utf8.rawValue))!, withTimeout: -1, tag: 0)
                         

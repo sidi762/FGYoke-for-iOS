@@ -20,25 +20,7 @@
                 <name>throttle</name>
                 <type>float</type>
                 <format>%f</format>
-                <node>/controls/engines/engine/throttle</node>
-            </chunk>
-            <chunk>
-                <name>throttle1</name>
-                <type>float</type>
-                <format>%f</format>
-                <node>/controls/engines/engine[1]/throttle</node>
-            </chunk>
-            <chunk>
-                <name>throttle2</name>
-                <type>float</type>
-                <format>%f</format>
-                <node>/controls/engines/engine[2]/throttle</node>
-            </chunk>
-            <chunk>
-                <name>throttle3</name>
-                <type>float</type>
-                <format>%f</format>
-                <node>/controls/engines/engine[3]/throttle</node>
+                <node>/controls/engines/throttle-all</node>
             </chunk>
 
         </input>
