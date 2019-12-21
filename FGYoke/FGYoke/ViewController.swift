@@ -61,7 +61,7 @@ class ViewController: UIViewController,GCDAsyncSocketDelegate  {
             if(isThrottleReverseAvailable == false){
                 self.throttle.setValue(0.0, animated: true)
                 throttleValue = 0.0
-                print(isThrottleReverseAvailable)
+                //print(isThrottleReverseAvailable)
             }else{
                 throttleValue = 0.0//incomplate
             }
@@ -234,6 +234,10 @@ class ViewController: UIViewController,GCDAsyncSocketDelegate  {
                         animationz.isRemovedOnCompletion = false
                         animationz.fillMode = CAMediaTimingFillMode.forwards
                         self?.yokepic.layer.add(animationz, forKey: nil)
+                        
+                        
+                        //油门手柄数据处理
+                        throttleValue = (throttleValue - 0.5) * -1
                         
                         //socket发送
                         let sentData = "\((Float)(accelerometerData!.acceleration.y)-(Float)(calibrateDataX)),\((Float)(-accelerometerData!.acceleration.z)+(Float)(calibrateDataY)),\(throttleValue)\n"
