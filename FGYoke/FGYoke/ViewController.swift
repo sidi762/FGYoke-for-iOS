@@ -56,11 +56,12 @@ class ViewController: UIViewController,GCDAsyncSocketDelegate  {
     
     @IBAction func throttleMoved(_ sender: UISlider) {
         //油门手柄数据处理
-        if(throttleValue >= 0.0){
+        if(throttle.value >= 0.0){
             throttleValue = 1 - throttle.value * 0.02
             print(throttleValue)
-        }else if(throttleValue < 0.0){
+        }else if(throttle.value < 0.0){
             throttleValue = 1.0
+            throttle.value = 0.0
         }
         
         
