@@ -58,7 +58,7 @@ class ViewController: UIViewController,GCDAsyncSocketDelegate  {
         //油门手柄数据处理
         if(throttle.value >= 0.0){
             throttleValue = 1 - throttle.value * 0.02
-            print(throttleValue)
+            //print(throttleValue)
         }else if(throttle.value < 0.0){
             throttleValue = 1.0
             throttle.value = 0.0
@@ -98,8 +98,7 @@ class ViewController: UIViewController,GCDAsyncSocketDelegate  {
         swichIsOff()
         swichIsOn()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1 , execute: {
-        self.swichIsOff()
-
+            self.swichIsOff()
         })
         
     }
@@ -119,8 +118,8 @@ class ViewController: UIViewController,GCDAsyncSocketDelegate  {
         throttleTrack.isHidden = true
         throttle.isHidden = true
         debugInfo.isHidden = true
-        
-        }
+    
+    }
     
     
     func startWorking(){
@@ -135,8 +134,7 @@ class ViewController: UIViewController,GCDAsyncSocketDelegate  {
             print("error")
             stopWorking()
             isConnected = false
-            
-            }
+        }
         if(clientSocket.isDisconnected == false){
             print("success")
             self.yokepic.isHidden = false
@@ -163,28 +161,30 @@ class ViewController: UIViewController,GCDAsyncSocketDelegate  {
     }
     
     @IBAction func switchMoved(_ sender: UIButton) {
+        
         if(devModeState == true){
             self.debugInfo.isHidden = false
         }else{
             self.debugInfo.isHidden = true
         }
-        if(isWorking==false){
-            if(acipaddre != ""){
-                if(acport != nil){
-                    startWorking()
-                }else{
-                    showAlert(inmessage: "Port number cannot be empty.\n请输入端口号")
-                    stopWorking()
-                }
-            }else{
+        if(!isWorking){
+            if(acipaddre == ""){
                 stopWorking()
                 showAlert(inmessage: "IP address cannot be empty.\n请输入IP地址")
+                return;
             }
-        }else{
+            if(acport == nil){
+                stopWorking()
+                showAlert(inmessage: "Port number cannot be empty.\n请输入端口号")
+                return;
+            }
+            startWorking()
+            
+        }else if(isWorking){
             stopWorking()
             yokepic.isHidden = true
         }
-        self.debugInfo.text = debugInfoText
+        //self.debugInfo.text = debugInfoText
     }
     
     @IBAction func calibrateStart(_ sender: UIButton) {
@@ -200,65 +200,62 @@ class ViewController: UIViewController,GCDAsyncSocketDelegate  {
         throttle.isHidden = false
 //        var accelerometerData="0"
 //        var error="0"
-        cmm.accelerometerUpdateInterval = 0.05
+        cmm.accelerometerUpdateInterval = 1/30
         if cmm.isAccelerometerAvailable{
-            cmm.startAccelerometerUpdates(to: OperationQueue.main) {[weak self](accelerometerData:CMAccelerometerData?,error:Error?) in
-                if self != nil {
-                    if error != nil{
-                        self?.cmm.stopAccelerometerUpdates()
+            cmm.startAccelerometerUpdates(to: OperationQueue.main) {[unowned self](accelerometerData:CMAccelerometerData?,error:Error?) in
+                if(error != nil){
+                    self.cmm.stopAccelerometerUpdates()
+                }else{
+                    //正常情况
+                    isAcWorking = true
+                    xdata = accelerometerData!.acceleration.y
+                    ydata = accelerometerData!.acceleration.z
+                    
+                    //测试信息
+                    self.xlabel.text = "X:\(accelerometerData!.acceleration.x)"
+                    self.ylabel.text = "Y:\(accelerometerData!.acceleration.y)"
+                    self.zlabel.text = "Z:\(accelerometerData!.acceleration.z)"
+                    if(devModeState == true){
+                        self.debugInfo.isHidden = false
                     }else{
-                        //正常情况
-                        isAcWorking = true
-                        xdata = accelerometerData!.acceleration.y
-                        ydata = accelerometerData!.acceleration.z
-                        
-                        //测试信息
-                        self?.xlabel.text = "X:\(accelerometerData!.acceleration.x)"
-                        self?.ylabel.text = "Y:\(accelerometerData!.acceleration.y)"
-                        self?.zlabel.text = "Z:\(accelerometerData!.acceleration.z)"
-                        if(devModeState == true){
-                            self?.debugInfo.isHidden = false
-                        }else{
-                            self?.debugInfo.isHidden = true
-                        }
-                        self?.debugInfo.text = debugInfoText
-                        
-                        
-                        //动画
-                        let animx = CABasicAnimation(keyPath: "transform.rotation")
-                        animx.toValue = (accelerometerData!.acceleration.y) * 90 * (Double.pi / 180) - calibrateDataX * 90 * (Double.pi / 180)
-                        animx.duration = 0.3
-                        animx.repeatCount = 1
-                        animx.isRemovedOnCompletion = false
-                        animx.fillMode = CAMediaTimingFillMode.forwards
-                        self?.yokepic.layer.add(animx, forKey: nil)
-                        let animationz = CABasicAnimation(keyPath: "bounds.size")
-                        animationz.fromValue = NSValue(cgSize: (self?.yokepic.frame.size)!)
-                        let datasizeheight = (self?.yokepic.frame.size.height)!+CGFloat(accelerometerData!.acceleration.z*100)-CGFloat(calibrateDataY*100)
-                        let datasizewidth = (self?.yokepic.frame.size.width)!+CGFloat(accelerometerData!.acceleration.z*100)-CGFloat(calibrateDataY*100)
-                        let size = CGSize(width: CGFloat(datasizewidth), height: CGFloat(datasizeheight))
-                        animationz.toValue = NSValue(cgSize:(size))
-                        animationz.duration = 0.01
-                        animationz.isRemovedOnCompletion = false
-                        animationz.fillMode = CAMediaTimingFillMode.forwards
-                        self?.yokepic.layer.add(animationz, forKey: nil)
-                        
-                        
-                        //socket发送
-                        let sentData = "\((Float)(accelerometerData!.acceleration.y)-(Float)(calibrateDataX)),\((Float)(-accelerometerData!.acceleration.z)+(Float)(calibrateDataY)),\(throttleValue)\n"
-                        
-                        self?.clientSocket?.write(sentData.data(using: String.Encoding(rawValue: String.Encoding.utf8.rawValue))!, withTimeout: -1, tag: 0)
-                        
-                        //判断是否断线
-                        if(self?.clientSocket.isConnected == false){
-                            if(self?.clientSocket.isDisconnected == true){
-                                self?.stopWorking()
-                                self?.cmm.stopAccelerometerUpdates()
-                            }
-                        }
-                        
-                        //结束
+                        self.debugInfo.isHidden = true
                     }
+                    self.debugInfo.text = debugInfoText
+                    
+                    
+                    //动画
+                    let animx = CABasicAnimation(keyPath: "transform.rotation")
+                    animx.toValue = (accelerometerData!.acceleration.y) * 90 * (Double.pi / 180) - calibrateDataX * 90 * (Double.pi / 180)
+                    animx.duration = 0.15
+                    animx.repeatCount = 1
+                    animx.isRemovedOnCompletion = false
+                    animx.fillMode = CAMediaTimingFillMode.forwards
+                    self.yokepic.layer.add(animx, forKey: nil)
+                    let animationz = CABasicAnimation(keyPath: "bounds.size")
+                    animationz.fromValue = NSValue(cgSize: self.yokepic.frame.size)
+                    let datasizeheight = self.yokepic.frame.size.height + CGFloat(accelerometerData!.acceleration.z*100) - CGFloat(calibrateDataY*100)
+                    let datasizewidth = self.yokepic.frame.size.width + CGFloat(accelerometerData!.acceleration.z*100) - CGFloat(calibrateDataY*100)
+                    let size = CGSize(width: CGFloat(datasizewidth), height: CGFloat(datasizeheight))
+                    animationz.toValue = NSValue(cgSize:(size))
+                    animationz.duration = 0.01 
+                    animationz.isRemovedOnCompletion = false
+                    animationz.fillMode = CAMediaTimingFillMode.forwards
+                    self.yokepic.layer.add(animationz, forKey: nil)
+                
+                    
+                    //socket发送
+                    let sentData = "\((Float)(accelerometerData!.acceleration.y)-(Float)(calibrateDataX)),\((Float)(-accelerometerData!.acceleration.z)+(Float)(calibrateDataY)),\(throttleValue)\n"
+                    
+                    self.clientSocket?.write(sentData.data(using: String.Encoding(rawValue: String.Encoding.utf8.rawValue))!, withTimeout: -1, tag: 0)
+                    
+                    //判断是否断线
+                    if(self.clientSocket.isConnected == false){
+                        if(self.clientSocket.isDisconnected == true){
+                            self.stopWorking()
+                            self.cmm.stopAccelerometerUpdates()
+                        }
+                    }
+                    //结束
                 }
             }
         }else{
