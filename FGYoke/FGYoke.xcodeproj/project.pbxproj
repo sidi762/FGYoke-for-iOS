@@ -30,6 +30,7 @@
 		DA73502A256679E5003C60A9 /* throttletrack1.png in Resources */ = {isa = PBXBuildFile; fileRef = DA735028256679E5003C60A9 /* throttletrack1.png */; };
 		DA73502F25667A00003C60A9 /* background1.png in Resources */ = {isa = PBXBuildFile; fileRef = DA73502E25667A00003C60A9 /* background1.png */; };
 		DA9723511DDB9745002F92B9 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9723501DDB9745002F92B9 /* AboutViewController.swift */; };
+		DAA6EA4827F0900F00BDCCE6 /* logo_tmp.png in Resources */ = {isa = PBXBuildFile; fileRef = DAA6EA4727F0900F00BDCCE6 /* logo_tmp.png */; };
 		DAA8DD9F1E21B87000254244 /* skyalliance logo.png in Resources */ = {isa = PBXBuildFile; fileRef = DAA8DD9E1E21B87000254244 /* skyalliance logo.png */; };
 		DACF22631E22D61000B27B90 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACF22621E22D61000B27B90 /* GuideViewController.swift */; };
 		DACF22671E22DDD800B27B90 /* Guide01.png in Resources */ = {isa = PBXBuildFile; fileRef = DACF22641E22DDD700B27B90 /* Guide01.png */; };
@@ -103,6 +104,7 @@
 		DA73502E25667A00003C60A9 /* background1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background1.png; sourceTree = "<group>"; };
 		DA82B7E21DF292D800DC210F /* FGYoke-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FGYoke-Bridging-Header.h"; sourceTree = "<group>"; };
 		DA9723501DDB9745002F92B9 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		DAA6EA4727F0900F00BDCCE6 /* logo_tmp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_tmp.png; sourceTree = "<group>"; };
 		DAA8DD9E1E21B87000254244 /* skyalliance logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "skyalliance logo.png"; sourceTree = "<group>"; };
 		DACF22621E22D61000B27B90 /* GuideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
 		DACF22641E22DDD700B27B90 /* Guide01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Guide01.png; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				DACF22661E22DDD700B27B90 /* Guide03.png */,
 				DA1A7E772017990400795C18 /* tmplogofgprc.png */,
 				DA67510C1DB9C0160087D9ED /* Main.storyboard */,
+				DAA6EA4727F0900F00BDCCE6 /* logo_tmp.png */,
 				DAD891FE1DEA308F00493A56 /* swichon.png */,
 				DA06BCA71DE7575C00B04F48 /* 校准按钮.png */,
 				DA735027256679E5003C60A9 /* throttle.png */,
@@ -292,7 +295,7 @@
 				TargetAttributes = {
 					DA6751041DB9C0150087D9ED = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = E499ZXTYV7;
+						DevelopmentTeam = J5G26C3RJ9;
 						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -369,6 +372,7 @@
 			files = (
 				DA735011256679C6003C60A9 /* yokebg.png in Resources */,
 				DAA8DD9F1E21B87000254244 /* skyalliance logo.png in Resources */,
+				DAA6EA4827F0900F00BDCCE6 /* logo_tmp.png in Resources */,
 				DA6751161DB9C0160087D9ED /* LaunchScreen.storyboard in Resources */,
 				DA735029256679E5003C60A9 /* throttle.png in Resources */,
 				DAD891FF1DEA308F00493A56 /* swichon.png in Resources */,
@@ -549,8 +553,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Apple Development: sidi762@qq.com (WQ94R8VV47)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development: sidi762@qq.com (WQ94R8VV47)";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -610,8 +614,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Apple Development: sidi762@qq.com (WQ94R8VV47)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development: sidi762@qq.com (WQ94R8VV47)";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -641,12 +645,12 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = FGYoke/FGYoke.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 30;
-				DEVELOPMENT_TEAM = E499ZXTYV7;
+				CURRENT_PROJECT_VERSION = 32;
+				DEVELOPMENT_TEAM = J5G26C3RJ9;
 				INFOPLIST_FILE = FGYoke/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.1.5;
-				PRODUCT_BUNDLE_IDENTIFIER = com.FGPRC.YokeforFlightGear;
+				MARKETING_VERSION = 1.2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.FGPRC.YokeforFlightGearTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "FGYoke/FGYoke-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -663,12 +667,12 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = FGYoke/FGYoke.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 30;
-				DEVELOPMENT_TEAM = E499ZXTYV7;
+				CURRENT_PROJECT_VERSION = 32;
+				DEVELOPMENT_TEAM = J5G26C3RJ9;
 				INFOPLIST_FILE = FGYoke/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.1.5;
-				PRODUCT_BUNDLE_IDENTIFIER = com.FGPRC.YokeforFlightGear;
+				MARKETING_VERSION = 1.2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.FGPRC.YokeforFlightGearTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "FGYoke/FGYoke-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Osize";
